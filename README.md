@@ -5,21 +5,21 @@
 <a href="https://www.python.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" align="right" height="48" width="48" ></a>
 
 <!--   my-ticker -->    
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&center=true&vCenter=true&width=600&lines=Hi+there+👋,+I+am+Utkarsh+Choudhary;+Welcome+to+My+Profile!;Over+2+years+of+programming+experience;Always+learning+new+things+;Machine+learning+enthusiast+;Student+at+Penn+State+University)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&center=true&vCenter=true&width=600&lines=Hi+there+👋,+I+am+Utkarsh+Choudhary;+Welcome+to+My+Profile!;Over+2+years+of+programming+experience;I+am+always+learning+new+things+;Machine+learning+and+Full+Stack+Development+enthusiast+;Student+at+Penn+State+University)](https://git.io/typing-svg)
 
 <h2 align="center">
     
 <img src="https://media.giphy.com/media/w1OBpBd7kJqHrJnJ13/giphy.gif" width="50">
-   Hello there, I'm Utkarsh(UC) Choudhary.
+   Hi, let me introduce myself... I am Utkarsh(UC) Choudhary.
    </h2>
-<h3 align="center"><i>Student at Penn State (Check out my <a href="https://www.linkedin.com/in/utkarsh-choudhary-a46146a4/">LinkedIn</a>!)</i></h3>
+<h3 align="center"><i>I am a student at Penn State (Check out my <a href="https://www.linkedin.com/in/utkarsh-choudhary-a46146a4/">LinkedIn</a>!)</i></h3>
 I'm an aspiring developer who's passionate about all fields of technology. From computer
 architecture to quantum computing to web development, I've messed around with a
 lot and messed up quite a bit, but I'm nowhere near done.
 I love to learn as much as I love to teach my younger brother, and even though I'm currently a
 student, I hope to share what I know as much as possible. I'm also a fireship patron and a massive fan of Jeff Delaney and his work.
 Take a look at some of my various projects!
-<h3 align="center"><i>Check out my <a href="https://github.com/UDogg?tab=repositories/">Projects</a>!)</i></h3>
+<h3 align="center"><i>Check out my <a href="https://github.com/UDogg?tab=repositories/">Projects</a>!</i></h3>
 
 
 </p>
