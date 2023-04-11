@@ -10,7 +10,8 @@
 <h2 align="center">
     
 <img src="https://media.giphy.com/media/w1OBpBd7kJqHrJnJ13/giphy.gif" width="50">
-   Hi, let me introduce myself... I am Utkarsh(UC) Choudhary.
+    <p align="center"><a href="https://6425c1349b5d1a0008fdfadf--curious-dango-babd23.netlify.app/"><img width="80%" alt="Hello, I'm UC, aspring Full-Stack developer!" src="https://see.fontimg.com/api/renderfont4/BxYl/eyJyIjoiZnMiLCJoIjo0MDAsInciOjIwMDAsImZzIjoyMDAsImZnYyI6IiMwMDAwMDAiLCJiZ2MiOiIjRkZGRkZGIiwidCI6MX0/SGksIEkgYW0gVUMsIGFzcGlyaW5nIGRldmVsb3Blci4/dirtyboy.png" /></a></p>
+   
    </h2>
 <h3 align="center"><i>I am a student at Penn State (Check out my <a href="https://www.linkedin.com/in/utkarsh-choudhary-a46146a4/">LinkedIn</a>!)</i></h3>
 I'm an aspiring developer who's passionate about all fields of technology. From computer
