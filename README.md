@@ -16,7 +16,7 @@ lot and messed up quite a bit, but I'm nowhere near done.
 I love to learn as much as I love to teach my younger brother, and even though I'm currently a
 student, I hope to share what I know as much as possible. I'm also a fireship patron and a massive fan of Jeff Delaney and his work.
 Take a look at some of my various projects!
-<h3 align="center"><i>Check out my <a href="https://github.com/UDogg?tab=repositories/">Projects</a>!</i></h3>
+<h3 align="center"><i>Check out my <a href="https://github.com/UDogg?tab=repositories">Projects</a>!</i></h3>
 
 
 </p>
