@@ -82,6 +82,8 @@ Take a look at some of my various projects!
         </td>
     </tr>
 </table>
-![ ](https://github.com/BEPb/BEPb/blob/output/github-contribution-grid-snake.svg)
+<p align="center">
+  <img src="https://github.com/BEPb/BEPb/blob/output/github-contribution-grid-snake.svg" width="300"/>
+</p>
 
 ### inspired by github.com/BEPb
