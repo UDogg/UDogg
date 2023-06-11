@@ -83,7 +83,7 @@ Take a look at some of my various projects!
     </tr>
 </table>
 <p align="center">
-  <img src="https://github.com/BEPb/BEPb/blob/output/github-contribution-grid-snake.svg" width="300"/>
+  <img src="https://github.com/BEPb/BEPb/blob/output/github-contribution-grid-snake.svg" width="500"/>
 </p>
 
 ### inspired by github.com/BEPb
