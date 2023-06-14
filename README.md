@@ -82,6 +82,7 @@ Take a look at some of my various projects!
         </td>
     </tr>
 </table>
+[![UDogg's GitHub stats](https://github-readme-stats.vercel.app/api?username=UDogg&theme=radical&show_icons=true&count_private=true)](https://github.com/anuraghazra/github-readme-stats)
 <p align="center">
   <img src="https://github.com/BEPb/BEPb/blob/output/github-contribution-grid-snake.svg" />
 </p>
