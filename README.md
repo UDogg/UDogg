@@ -68,7 +68,7 @@ Take a look at some of my various projects!
         </td>
     </tr>
     
-<table>
+<table align="center">
     <tr>
         <th><i>My GitHub Stats</i></th>
         <th><i>The Languages I Use</i></th>
