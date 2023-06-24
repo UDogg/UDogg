@@ -9,9 +9,9 @@
     <p align="center"><a href="https://ucswebsite.netlify.app/"><img width="80%" alt="Hello, I'm UC, aspring Full-Stack developer!" src="https://see.fontimg.com/api/renderfont4/BxYl/eyJyIjoiZnMiLCJoIjo4NiwidyI6MjAwMCwiZnMiOjQzLCJmZ2MiOiIjRkZGRkZGIiwiYmdjIjoiIzM1M0Q0QiJ9/SGksIEkgYW0gVUMsIGFzcGlyaW5nIGRldmVsb3Blci4/dirtyboy.png" /></a></p>
    
    </h2>
-<h3 align="center"><i>I am a student at Penn State (Check out my <a href="https://www.linkedin.com/in/utkarsh-choudhary-a46146a4/">LinkedIn</a>!)</i></h3>
+<h3 align="center"><i>I am a student at Penn State (Check out my <a href="https://www.linkedin.com/in/utkarsh-choudhary-a46146a4/">LinkedIn Profile</a>!)</i></h3>
 I'm an aspiring developer who's passionate about all fields of technology. From computer
-architecture to quantum computing to web development, I've messed around with a
+architecture to quantum computing to web development, I've experimented with a
 lot and messed up quite a bit, but I'm nowhere near done.
 I love to learn as much as I love to teach my younger brother, and even though I'm currently a
 student, I hope to share what I know as much as possible. I'm also a fireship patron and a massive fan of Jeff Delaney and his work.
@@ -88,4 +88,4 @@ Take a look at some of my various projects!
   <img src="https://github.com/BEPb/BEPb/blob/output/github-contribution-grid-snake.svg" />
 </p>
 
-### inspired by github.com/BEPb
+### inspired by github.com/BEPb/BEPb
