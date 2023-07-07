@@ -88,4 +88,4 @@ Take a look at some of my various projects!
   <img src="https://github.com/BEPb/BEPb/blob/output/github-contribution-grid-snake.svg" />
 </p>
 
-### inspired by github.com/BEPb/BEPb
+### inspired by [github.com/BEPb/BEPb](https://github.com/BEPb/BEPb)
