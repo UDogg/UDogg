@@ -1,7 +1,9 @@
 ![](assets/Bottom_up.svg)
 
-<!--   my-ticker -->    
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&center=true&vCenter=true&width=600&lines=Hi+there+👋,+I+am+Utkarsh+Choudhary;he/him/his;+Welcome+to+My+Profile!;Over+2+years+of+programming+experience;I+am+always+learning+new+things+;NLP+and+Full+Stack+Development+enthusiast+;Student+at+Penn+State+University)](https://git.io/typing-svg)
+<!--   my-ticker -->
+<p align="center">
+    [![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&center=true&vCenter=true&width=600&lines=Hi+there+👋,+I+am+Utkarsh+Choudhary;he/him/his;+Welcome+to+My+Profile!;Over+2+years+of+programming+experience;I+am+always+learning+new+things+;NLP+and+Full+Stack+Development+enthusiast+;Student+at+Penn+State+University)](https://git.io/typing-svg)
+</p>
 
 <h2 align="center">
     
@@ -13,7 +15,7 @@
 I'm an aspiring developer who's passionate about all fields of technology. From computer
 architecture to quantum computing to web development, I've experimented with a
 lot and messed up quite a bit, but I'm nowhere near done.
-I love to learn as much as I love to teach my younger brother, and even though I'm currently a
+I love to learn, and even though I'm currently a
 student, I hope to share what I know as much as possible. I'm also a fireship patron and a massive fan of Jeff Delaney and his work.
 Take a look at some of my various projects!
 <h3 align="center"><i>Check out my <a href="https://github.com/UDogg?tab=repositories" target="_blank">Projects</a>!</i></h3>
@@ -87,7 +89,7 @@ Take a look at some of my various projects!
 <p align="center">
   <img src="https://github.com/BEPb/BEPb/blob/output/github-contribution-grid-snake.svg" />
 </p>
-<div className="flex flex-col justify-center">
+<div align="center">
     <h2>Last Updated: July 14, 2023</h2>
 </div>
 
