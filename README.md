@@ -1,9 +1,10 @@
 ![](assets/Bottom_up.svg)
 
 <!--   my-ticker -->
-<p align="center">
+<div align="center">
     [![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&center=true&vCenter=true&width=600&lines=Hi+there+👋,+I+am+Utkarsh+Choudhary;he/him/his;+Welcome+to+My+Profile!;Over+2+years+of+programming+experience;I+am+always+learning+new+things+;NLP+and+Full+Stack+Development+enthusiast+;Student+at+Penn+State+University)](https://git.io/typing-svg)
-</p>
+</div>
+
 
 <h2 align="center">
     
