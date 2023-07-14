@@ -87,7 +87,7 @@ Take a look at some of my various projects!
 <p align="center">
   <img src="https://github.com/BEPb/BEPb/blob/output/github-contribution-grid-snake.svg" />
 </p>
-<div className="flex flex-col items-center">
+<div className="flex flex-col justify-center">
     <h2>Last Updated: July 14, 2023</h2>
 </div>
 
