@@ -88,8 +88,7 @@ Take a look at some of my various projects!
 <p align="center">
   <img src="https://github.com/BEPb/BEPb/blob/output/github-contribution-grid-snake.svg" />
 </p>
-<div align="center">
-    <h5>Last Updated: July 14, 2023</h5>
-</div>
 
-### inspired by [github.com/BEPb/BEPb](https://github.com/BEPb/BEPb)
+inspired by [github.com/BEPb/BEPb](https://github.com/BEPb/BEPb)
+<h5>Last Updated: July 14, 2023</h5>
+
