@@ -49,6 +49,7 @@ Take a look at some of my various projects!
             <img style="width: 46px; height: 46px" src="assets/rust.png" alt="Rust" />
             <img style="width: 46px; height: 46px" src="assets/solidity.svg" alt="Solidity" />
             <img style="width: 46px; height: 46px" src="assets/typescript.svg" alt="TypeScript" />
+            <img style="width: 46px; height: 46px" src="assets/zig.png" alt="Zig" />
         </td>
     </tr>
     <tr>
