@@ -18,7 +18,7 @@
 I'm a full-stack developer and NLP enthusiast who thrives on building elegant, performant systems that bridge logic and creativity.  
 From **systems programming** to **modern web apps** to **AI integration**, I love exploring how different layers of computing fit together.
 
-I experiment fearlessly, learn obsessively, and share openly — whether that’s code, insight, or a fun tech meme.  
+I experiment fearlessly, learn obsessively, and share openly — whether that’s code, insight, or a fun tech meme (literally my entire instagram).  
 Oh, and yes — I use emojis *way too much* 😄.
 
 <p align="center">
@@ -45,10 +45,12 @@ Oh, and yes — I use emojis *way too much* 😄.
 
 | **Category** | **Technologies** |
 |---------------|------------------|
-| 💬 **Languages** | <img src="assets/c.svg" width="40" title="C"/> <img src="assets/cplusplus.svg" width="40" title="C++"/> <img src="assets/java.svg" width="40" title="Java"/> <img src="assets/csharp.svg" width="40" title="C#"/> <img src="assets/python.svg" width="40" title="Python"/> <img src="assets/javascript.svg" width="40" title="JavaScript"/> <img src="assets/typescript.svg" width="40" title="TypeScript"/> <img src="assets/rust.png" width="40" title="Rust"/> <img src="assets/solidity.svg" width="40" title="Solidity"/> <img src="assets/zig.png" width="40" title="Zig"/> |
-| ⚙️ **Frameworks** | <img src="assets/react.svg" width="40" title="React"/> <img src="assets/angularjs.svg" width="40" title="Angular"/> <img src="assets/nodedotjs.svg" width="40" title="Node.js"/> <img src="assets/django.svg" width="40" title="Django"/> <img src="assets/springboot.svg" width="40" title="Spring Boot"/> <img src="assets/dotnet.svg" width="40" title=".NET"/> |
-| 🧰 **Tools & DBs** | <img src="assets/git.svg" width="40" title="Git"/> <img src="assets/visualstudiocode.svg" width="40" title="VS Code"/> <img src="assets/postgresql.svg" width="40" title="PostgreSQL"/> <img src="assets/mysql.svg" width="40" title="MySQL"/> <img src="assets/docker.svg" width="40" title="Docker"/> <img src="assets/linux.svg" width="40" title="Linux"/> <img src="assets/ubuntu.svg" width="40" title="Ubuntu"/> |
+| 💬 **Languages** | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" width="40" title="C"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" width="40" title="C++"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="40" title="Java"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" width="40" title="C#"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="40" title="Python"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="40" title="JavaScript"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="40" title="TypeScript"/> <img src="assets/rust.png" width="40" title="Rust"/> <img src="assets/solidity.svg" width="40" title="Solidity"/> <img src="assets/zig.png" width="40" title="Zig"/> |
+| ⚙️ **Frameworks** | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="40" title="React"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" width="40" title="Angular"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="40" title="Node.js"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" width="40" title="Django"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" width="40" title="Spring Boot"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" width="40" title=".NET"/> |
+| 🧰 **Tools & DBs** | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="40" title="Git"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" width="40" title="VS Code"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="40" title="PostgreSQL"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="40" title="MySQL"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="40" title="Docker"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" width="40" title="Linux"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain.svg" width="40" title="Ubuntu"/> |
+
 </div>
+
 
 <p align="center">
   <img src="https://media.giphy.com/media/L8K62iTDkzGX6/giphy.gif" width="300" alt="Coding animation">
