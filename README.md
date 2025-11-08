@@ -141,6 +141,24 @@ Oh, and yes — I use emojis *way too much* 😄.
   <img src="https://github.com/BEPb/BEPb/blob/output/github-contribution-grid-snake.svg" />
 </p>
 </div>
+<hr />
+
+## 💡 Why I Build.
+
+I build because creation feels like translation — converting imagination, emotion, and logic into something tangible.  
+In the words of Hamilton: An American Musical, "God help and forgive me, I want to build something that's gonna outlive me."    
+It’s my way of understanding the world, of processing thoughts and experiences through code.  
+
+Every project I’ve worked on tells a small story of who I was at the time:  
+- [**isekai.html**](http://udogg.github.io/isekai.html) *(password: "j")* — born from my passion for anime, it is a comedic take on storytelling, art, and design through the lens of a web experience.
+‼️🚨**isekai.html** has some bad language because it is a comedy piece.‼️🚨  
+- [**todo.html**](https://udogg.github.io/todo.html) — a lightweight (I mean GH can host it) life organizer I built to bring structure to my chaos, where code meets discipline.  
+- [**form.html**](https://udogg.github.io/form.html) — a simple but meaningful project: a form I made to help my mom with her work. It reminded me that even small tools can make someone’s day easier.  
+- [**conc.html**](https://udogg.github.io/conc.html) — a Penn State *ENG 202C* project that visualizes concurrency in a high-level, intuitive way, blending my love for systems programming with clear communication.  
+- [**b.pdf**](https://udogg.github.io/b.pdf) — a research-heavy *ENG 202C* technical paper on botnets, diving deep into cybersecurity concepts and writing them up for an academic audience.  
+
+Each project reflects a different emotion — curiosity, care, discipline, or just the joy of learning something new.  
+Coding, for me, isn’t just about syntax and systems. It’s how I express myself, connect with others, and keep evolving — one build, one bug fix, one idea at a time.  
 
 ---
 
