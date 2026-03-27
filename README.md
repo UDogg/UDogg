@@ -45,9 +45,9 @@ Oh, and yes — I use emojis *way too much* 😄.
 
 | **Category** | **Technologies** |
 |---------------|------------------|
-| 💬 **Languages** | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" width="40" title="C"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" width="40" title="C++"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="40" title="Java"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" width="40" title="C#"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="40" title="Python"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="40" title="JavaScript"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="40" title="TypeScript"/> <img src="assets/rust.png" width="40" title="Rust"/> <img src="assets/solidity.svg" width="40" title="Solidity"/> <img src="assets/zig.png" width="40" title="Zig"/> |
-| ⚙️ **Frameworks** | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="40" title="React"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" width="40" title="Angular"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="40" title="Node.js"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" width="40" title="Django"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" width="40" title="Spring Boot"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" width="40" title=".NET"/> |
-| 🧰 **Tools & DBs** | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="40" title="Git"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" width="40" title="VS Code"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="40" title="PostgreSQL"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="40" title="MySQL"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="40" title="Docker"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" width="40" title="Linux"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain.svg" width="40" title="Ubuntu"/> |
+| 💬 **Languages** | <img src="https://skillicons.dev/icons?i=c,cpp,java,python,js,ts,rust,solidity,zig" alt="Languages" /> <img  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"  width="40"  title="C#"/>  |
+| ⚙️ **Frameworks** | <img src="https://skillicons.dev/icons?i=react,angular,nodejs,django,spring,dotnet" alt="Frameworks" /> |
+| 🧰 **Tools & DBs** | <img src="https://skillicons.dev/icons?i=git,vscode,postgres,mysql,docker,linux,ubuntu" alt="Tools & Databases" /> |
 
 </div>
 
@@ -134,8 +134,10 @@ Oh, and yes — I use emojis *way too much* 😄.
 | <img src="https://streak-stats.demolab.com?user=UDogg&theme=tokyonight&hide_border=true&date_format=j%20M%5B%20Y%5D"/> | <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=UDogg&layout=compact&theme=tokyonight&hide_border=true"/> |
 
 <br>
+<p align="center">
+  <img src="https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif" width="350"/>
+</p>
 
-<img src="https://github-readme-stats.vercel.app/api?username=UDogg&theme=radical&show_icons=true&count_private=true&hide=issues,contribs" width="80%"/>
 
 <p align="center">
   <img src="https://github.com/BEPb/BEPb/blob/output/github-contribution-grid-snake.svg" />
@@ -162,6 +164,14 @@ Coding, for me, isn’t just about syntax and systems. It’s how I express myse
 
 ---
 
+## ⚙️ Tech ~~Stack~~ Queue
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=c,cpp,rust,go,python,java,linux,docker,kubernetes,react,ts,nodejs,postgres,redis" />
+</p>
+
+---
+
 ## 🚀 Portfolio Spotlight
 
 🎨 Explore my interactive 3D portfolio built with **Three.js** & **React Three Fiber**:  
@@ -177,5 +187,5 @@ Coding, for me, isn’t just about syntax and systems. It’s how I express myse
   <img src="https://media.giphy.com/media/dWesBcTLavkZuG35MI/giphy.gif" width="300"/>
 </p>
 
-<h3 align="center">Lets build something amazing together...</h3>
+<h3 align="center">Let’s build systems that actually scale...</h3>
 
