@@ -172,6 +172,13 @@ Coding, for me, isn’t just about syntax and systems. It’s how I express myse
 
 ---
 
+## Philosophy
+<p align="center">
+  <img src="https://github.com/UDogg/UDogg/blob/main/assets/philosophy.svg" />
+</p>
+
+---
+
 ## 🚀 Portfolio Spotlight
 
 🎨 Explore my interactive 3D portfolio built with **Three.js** & **React Three Fiber**:  
