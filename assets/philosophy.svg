@@ -1,0 +1,265 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="460" viewBox="0 0 700 460">
+<defs>
+  <style>
+    .scan { animation: scanMove 3.5s linear infinite; }
+    @keyframes scanMove {
+      0%   { transform: translateY(0px);   opacity: 0; }
+      5%   { opacity: 1; }
+      95%  { opacity: 1; }
+      100% { transform: translateY(462px); opacity: 0; }
+    }
+
+    .grid { animation: gridPulse 4s ease-in-out infinite; }
+    @keyframes gridPulse {
+      0%, 100% { opacity: 0.4; }
+      50%       { opacity: 0.85; }
+    }
+
+    .cursor { animation: blink 0.8s step-end infinite; }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0; }
+    }
+
+    /*
+      3 lines, each on its own row.
+      Total cycle = 12s. Each line gets 4s:
+        0s–0.6s   fade in
+        0.6s–3s   hold visible
+        3s–3.6s   fade out
+        3.6s–12s  invisible (other lines showing)
+
+      Line 1: delay 0s
+      Line 2: delay 4s
+      Line 3: delay 8s
+    */
+    .line1 { animation: lineAnim 12s 0s  infinite both; }
+    .line2 { animation: lineAnim 12s 4s  infinite both; }
+    .line3 { animation: lineAnim 12s 8s  infinite both; }
+
+    @keyframes lineAnim {
+      0%    { opacity: 0; transform: translateX(-6px); }
+      8%    { opacity: 1; transform: translateX(0); }
+      70%   { opacity: 1; transform: translateX(0); }
+      83%   { opacity: 0; transform: translateX(0); }
+      100%  { opacity: 0; transform: translateX(0); }
+    }
+
+    /* Cursor follows active line — same timing as lineAnim */
+    .cur1 { animation: lineAnim 12s 0s  infinite both; }
+    .cur2 { animation: lineAnim 12s 4s  infinite both; }
+    .cur3 { animation: lineAnim 12s 8s  infinite both; }
+
+    .glow-text {
+      filter: drop-shadow(0 0 8px rgba(0,247,255,0.85)) drop-shadow(0 0 22px rgba(0,247,255,0.35));
+      animation: glowPulse 2.5s ease-in-out infinite;
+    }
+    @keyframes glowPulse {
+      0%, 100% { filter: drop-shadow(0 0 6px rgba(0,247,255,0.8))  drop-shadow(0 0 18px rgba(0,247,255,0.3)); }
+      50%       { filter: drop-shadow(0 0 14px rgba(0,247,255,1.0)) drop-shadow(0 0 36px rgba(0,247,255,0.7)); }
+    }
+
+    .corners { animation: cornerPulse 3s ease-in-out infinite; }
+    @keyframes cornerPulse {
+      0%, 100% { opacity: 0.45; }
+      50%       { opacity: 1.0; }
+    }
+
+    .d1 { animation: slideIn 0.5s 0.2s  both ease-out; }
+    .d2 { animation: slideIn 0.5s 0.5s  both ease-out; }
+    .d3 { animation: slideIn 0.5s 0.85s both ease-out; }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-10px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    .sym-green { animation: symG 2.2s 0.3s ease-in-out infinite; }
+    .sym-amber { animation: symG 2.2s 0.8s ease-in-out infinite; }
+    .sym-red   { animation: symG 2.2s 1.3s ease-in-out infinite; }
+    @keyframes symG {
+      0%, 100% { opacity: 0.85; }
+      50%       { opacity: 1; filter: drop-shadow(0 0 6px currentColor); }
+    }
+
+    .tagline { animation: fadeUp 0.8s 1.2s both ease-out; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .accent { animation: accentPulse 3s 2s ease-in-out infinite; }
+    @keyframes accentPulse {
+      0%, 100% { fill: #00f7ff; filter: drop-shadow(0 0 5px rgba(0,247,255,0.7)); }
+      50%       { fill: #80ffff; filter: drop-shadow(0 0 14px rgba(0,247,255,1.0)); }
+    }
+
+    .pa { animation: floatA 7s 0s   linear infinite; }
+    .pb { animation: floatB 9s 1.5s linear infinite; }
+    .pc { animation: floatA 6s 3s   linear infinite; }
+    .pd { animation: floatB 8s 4.5s linear infinite; }
+    .pe { animation: floatA 11s 2s  linear infinite; }
+    .pf { animation: floatB 7s 6s   linear infinite; }
+    @keyframes floatA {
+      0%   { transform: translate(0,0);        opacity: 0; }
+      10%  { opacity: 0.4; }
+      90%  { opacity: 0.4; }
+      100% { transform: translate(28px,-85px); opacity: 0; }
+    }
+    @keyframes floatB {
+      0%   { transform: translate(0,0);         opacity: 0; }
+      10%  { opacity: 0.3; }
+      90%  { opacity: 0.3; }
+      100% { transform: translate(-24px,-90px); opacity: 0; }
+    }
+  </style>
+
+  <linearGradient id="scanGrad" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%"   stop-color="#080b10"/>
+    <stop offset="35%"  stop-color="rgba(0,247,255,0.0)"/>
+    <stop offset="50%"  stop-color="rgba(0,247,255,0.75)"/>
+    <stop offset="65%"  stop-color="rgba(0,247,255,0.0)"/>
+    <stop offset="100%" stop-color="#080b10"/>
+  </linearGradient>
+
+  <pattern id="gridpat" width="35" height="35" patternUnits="userSpaceOnUse">
+    <path d="M35 0 L0 0 0 35" fill="none" stroke="rgba(0,247,255,0.07)" stroke-width="0.5"/>
+  </pattern>
+
+  <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+    <feGaussianBlur stdDeviation="2.5" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+</defs>
+
+<!-- Background -->
+<rect width="700" height="460" fill="#080b10"/>
+<rect class="grid" width="700" height="460" fill="url(#gridpat)"/>
+<rect class="scan" x="0" y="0" width="700" height="2" fill="url(#scanGrad)"/>
+
+<!-- Corner brackets -->
+<g class="corners" stroke="rgba(0,247,255,0.65)" stroke-width="2" fill="none">
+  <path d="M12 30 L12 12 L30 12"/>
+  <path d="M670 30 L670 12 L652 12"/>
+  <path d="M12 430 L12 448 L30 448"/>
+  <path d="M670 430 L670 448 L652 448"/>
+</g>
+
+<!-- Particles -->
+<circle class="pa" cx="80"  cy="370" r="2"   fill="rgba(0,247,255,0.55)"/>
+<circle class="pb" cx="210" cy="320" r="1.5" fill="rgba(0,247,255,0.4)"/>
+<circle class="pc" cx="590" cy="390" r="2"   fill="rgba(0,247,255,0.5)"/>
+<circle class="pd" cx="630" cy="200" r="1.5" fill="rgba(0,247,255,0.35)"/>
+<circle class="pe" cx="430" cy="410" r="1.2" fill="rgba(0,247,255,0.4)"/>
+<circle class="pf" cx="145" cy="240" r="1.5" fill="rgba(0,247,255,0.35)"/>
+
+<!-- Section label -->
+<text x="42" y="46" font-family="'JetBrains Mono','Courier New',monospace"
+      font-size="11" fill="rgba(0,247,255,0.65)" letter-spacing="4">&#x1F4A1; PHILOSOPHY</text>
+<line x1="200" y1="42" x2="658" y2="42" stroke="rgba(0,247,255,0.25)" stroke-width="0.5"/>
+
+<!-- ─────────────────────────────────────────
+     TYPING AREA — 3 separate lines, each on own row.
+     Line 1 y=80, Line 2 y=114, Line 3 y=148
+     Each fades in/out independently. Never overlap.
+     ───────────────────────────────────────── -->
+
+<!-- Prompt symbol — always visible -->
+<text x="42" y="80" font-family="'JetBrains Mono','Courier New',monospace"
+      font-size="20" font-weight="700" fill="rgba(0,247,255,0.35)">&#x276F;</text>
+
+<!-- Line 1: Latency is a feature. -->
+<g class="line1">
+  <text x="68" y="80" class="glow-text"
+        font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="20" font-weight="700" fill="#00f7ff">Latency is a feature.</text>
+  <rect class="cur1 cursor" x="340" y="60" width="2.5" height="24" fill="#00f7ff" filter="url(#glow)"/>
+</g>
+
+<!-- Line 2: Debuggability is a requirement. -->
+<g class="line2">
+  <text x="68" y="112" class="glow-text"
+        font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="20" font-weight="700" fill="#00f7ff">Debuggability is a requirement.</text>
+  <rect class="cur2 cursor" x="490" y="92" width="2.5" height="24" fill="#00f7ff" filter="url(#glow)"/>
+</g>
+
+<!-- Line 3: Performance is not optional. -->
+<g class="line3">
+  <text x="68" y="144" class="glow-text"
+        font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="20" font-weight="700" fill="#00f7ff">Performance is not optional.</text>
+  <rect class="cur3 cursor" x="444" y="124" width="2.5" height="24" fill="#00f7ff" filter="url(#glow)"/>
+</g>
+
+<!-- ─────────────────────────────────────────
+     DIFF BLOCK  y=168 to y=330
+     28px header + 3 × 44px rows = 160px total
+     ───────────────────────────────────────── -->
+<rect x="42" y="168" width="616" height="162" rx="7"
+      fill="rgba(0,247,255,0.03)" stroke="rgba(0,247,255,0.2)" stroke-width="1"/>
+
+<!-- Header -->
+<rect x="42"  y="168" width="616" height="28" rx="7" fill="rgba(0,247,255,0.09)"/>
+<rect x="42"  y="182" width="616" height="14"         fill="rgba(0,247,255,0.09)"/>
+<text x="58"  y="187" font-family="'JetBrains Mono','Courier New',monospace"
+      font-size="11" fill="rgba(0,247,255,0.8)" letter-spacing="2">// system requirements</text>
+
+<!-- Row dividers -->
+<line x1="42" y1="196" x2="658" y2="196" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+<line x1="42" y1="240" x2="658" y2="240" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+<line x1="42" y1="284" x2="658" y2="284" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+
+<!-- Row 1 + green -->
+<g class="d1">
+  <rect x="43" y="197" width="614" height="43" fill="rgba(0,255,136,0.06)"/>
+  <text x="66" y="224" class="sym-green"
+        font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="17" font-weight="700" fill="#00ff88" filter="url(#glow)">+</text>
+  <text x="94" y="224" font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="14" fill="#a8ffd4">behave under stress</text>
+</g>
+
+<!-- Row 2 ! amber -->
+<g class="d2">
+  <rect x="43" y="241" width="614" height="43" fill="rgba(255,193,7,0.06)"/>
+  <text x="66" y="268" class="sym-amber"
+        font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="17" font-weight="700" fill="#ffc107" filter="url(#glow)">!</text>
+  <text x="94" y="268" font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="14" fill="#ffe083">fail predictably</text>
+</g>
+
+<!-- Row 3 # red -->
+<g class="d3">
+  <rect x="43" y="285" width="614" height="43" fill="rgba(255,76,96,0.06)"/>
+  <text x="64" y="312" class="sym-red"
+        font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="17" font-weight="700" fill="#ff4c60" filter="url(#glow)">#</text>
+  <text x="94" y="312" font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="14" fill="#ffaab0">recover fast</text>
+</g>
+
+<!-- ─────────────────────────────────────────
+     TAGLINE  y=346 to y=430
+     ───────────────────────────────────────── -->
+<g class="tagline">
+  <rect x="42" y="346" width="3"   height="78" rx="1.5" fill="#00f7ff" filter="url(#glow)"/>
+  <rect x="42" y="346" width="616" height="78" rx="5"   fill="rgba(0,247,255,0.05)"/>
+
+  <text x="62" y="374"
+        font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="15" font-weight="700" fill="#e8f8ff"
+  >I don&#x2019;t just build systems that <tspan class="accent">work.</tspan></text>
+
+  <text x="62" y="397"
+        font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="15" font-weight="700" fill="#e8f8ff"
+  >I build systems that <tspan class="accent">survive reality.</tspan></text>
+
+  <text x="62" y="418"
+        font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="11" fill="rgba(0,247,255,0.8)" letter-spacing="1"
+  >// not a prototype. not a demo. production.</text>
+</g>
+
+</svg>
