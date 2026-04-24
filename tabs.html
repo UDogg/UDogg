@@ -1,0 +1,1881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Tab System with Markdown Editor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            max-width: 800px;
+            color: white;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+            position: relative;
+            display: inline-block;
+        }
+
+        h1::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70%;
+            height: 4px;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            border-radius: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            margin: 25px 0 20px;
+            line-height: 1.6;
+            color: #e0e7ff;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .instructions {
+            background: rgba(30, 40, 70, 0.75);
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 25px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(100, 150, 255, 0.25);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            color: #e6e9ff;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .instructions strong {
+            color: #6a8bff;
+        }
+
+        .instructions ul {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        .instructions li {
+            margin-bottom: 8px;
+        }
+
+        .tabs-container {
+            width: 100%;
+            max-width: 1100px;
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 16px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            position: relative;
+            border: 1px solid rgba(0, 30, 80, 0.2);
+        }
+
+        .admin-badge {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 20px;
+            box-shadow: 0 3px 10px rgba(255, 75, 43, 0.4);
+            z-index: 20;
+            animation: pulse 2s infinite;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .admin-badge::before {
+            content: "!";
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: white;
+            color: #ff4b2b;
+            border-radius: 50%;
+            font-size: 0.75rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 75, 43, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 75, 43, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 75, 43, 0); }
+        }
+
+        .tab-bar {
+            display: flex;
+            background: linear-gradient(to bottom, #f8fafc, #f1f5f9);
+            padding: 10px 16px 0 16px;
+            min-height: 56px;
+            position: relative;
+            z-index: 10;
+            border-bottom: 1px solid rgba(0, 30, 80, 0.12);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .tab {
+            background: linear-gradient(to bottom, #eef2f7, #dde3eb);
+            border-radius: 8px 8px 0 0;
+            padding: 10px 20px 12px 20px;
+            margin-right: 8px;
+            position: relative;
+            cursor: pointer;
+            min-width: 130px;
+            max-width: 280px;
+            transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            align-items: center;
+            height: 42px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(100, 130, 180, 0.25);
+            border-bottom: none;
+            overflow: hidden;
+            font-weight: 500;
+        }
+
+        .tab::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .tab.active::before {
+            transform: scaleX(1);
+        }
+
+        .tab.active {
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            border-bottom: none;
+            margin-bottom: -2px;
+            z-index: 5;
+            height: 44px;
+            padding-bottom: 10px;
+            transform: translateY(-1px);
+            border-color: rgba(100, 130, 180, 0.4);
+        }
+
+        .tab:last-child {
+            margin-right: 20px;
+        }
+
+        .tab-title {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-right: 28px;
+            user-select: none;
+            display: block;
+            line-height: 1.3;
+        }
+
+        .close-tab {
+            position: absolute;
+            right: 12px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-weight: bold;
+            font-size: 18px;
+            opacity: 0.8;
+            transition: all 0.25s ease;
+            cursor: pointer;
+            user-select: none;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .close-tab:hover {
+            background: #cbd5e1;
+            color: #475569;
+            opacity: 1;
+            transform: scale(1.15) rotate(90deg);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        .tab:hover:not(.active) {
+            background: linear-gradient(to bottom, #e2e8f0, #cbd5e1);
+            transform: translateY(-1px);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+        }
+
+        .tab.active .close-tab:hover {
+            background: #bfdbfe;
+        }
+
+        .add-tab-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            border: none;
+            color: white;
+            font-weight: bold;
+            font-size: 28px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 12px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            flex-shrink: 0;
+            box-shadow: 0 4px 15px rgba(37, 117, 252, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .add-tab-btn:hover {
+            transform: rotate(90deg) scale(1.05);
+            box-shadow: 0 6px 20px rgba(37, 117, 252, 0.6);
+        }
+
+        .add-tab-btn:active {
+            transform: scale(0.95);
+        }
+
+        .add-tab-btn::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+            transform: scale(0);
+            transition: transform 0.5s ease;
+            border-radius: 50%;
+        }
+
+        .add-tab-btn:hover::after {
+            transform: scale(1);
+        }
+
+        .add-tab-btn:disabled {
+            opacity: 0.55;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: 0 2px 8px rgba(37, 117, 252, 0.2);
+        }
+
+        .add-tab-btn:disabled:hover {
+            transform: none;
+        }
+
+        .tab-content-container {
+            padding: 30px;
+            min-height: 450px;
+            background: white;
+            position: relative;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(15px);
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0);
+            }
+        }
+
+        .content-title {
+            font-size: 2.1rem;
+            margin-bottom: 20px;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #f1f5f9;
+        }
+
+        .content-title svg {
+            margin-right: 16px;
+            width: 36px;
+            height: 36px;
+            flex-shrink: 0;
+        }
+
+        .content-body {
+            line-height: 1.7;
+            color: #475569;
+            max-width: 750px;
+            font-size: 1.05rem;
+        }
+
+        .content-footer {
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px solid #e2e8f0;
+            font-style: italic;
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        .drag-indicator {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            border-radius: 2px;
+            transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+            z-index: 20;
+            pointer-events: none;
+            box-shadow: 0 0 8px rgba(37, 117, 252, 0.6);
+        }
+
+        /* Text Editor Styles */
+        .text-editor-container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .editor-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .editor-title {
+            font-size: 1.8rem;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .editor-title svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .editor-toolbar {
+            display: flex;
+            gap: 10px;
+            padding: 14px 0;
+            border-bottom: 1px solid #e2e8f0;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            background: #f8fafc;
+            border-radius: 10px;
+            padding: 12px 15px;
+        }
+
+        .toolbar-group {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            padding: 0 8px;
+            border-right: 1px solid #cbd5e1;
+        }
+
+        .toolbar-group:last-child {
+            border-right: none;
+        }
+
+        .toolbar-btn {
+            background: white;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            padding: 8px 14px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            min-width: 36px;
+            justify-content: center;
+            height: 36px;
+            font-weight: 500;
+            color: #475569;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .toolbar-btn:hover {
+            background: #f1f5f9;
+            border-color: #94a3b8;
+            transform: translateY(-1px);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+        }
+
+        .toolbar-btn:active {
+            transform: translateY(0);
+        }
+
+        .toolbar-btn.active, .toolbar-btn:active {
+            background: #dbeafe;
+            border-color: #93c5fd;
+            color: #1d4ed8;
+            box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+        }
+
+        .toolbar-btn.bold { font-weight: bold; }
+        .toolbar-btn.italic { font-style: italic; }
+        .toolbar-btn.underline { text-decoration: underline; }
+        .toolbar-btn.spoiler { 
+            background: #1e293b; 
+            color: #f8fafc; 
+            border-color: #334155;
+        }
+        .toolbar-btn.spoiler:hover {
+            background: #334155;
+        }
+
+        .editor-panes {
+            display: flex;
+            gap: 25px;
+            flex: 1;
+            min-height: 300px;
+            margin-bottom: 25px;
+        }
+
+        .editor-pane {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+
+        .pane-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0 12px;
+            border-bottom: 1px solid #e2e8f0;
+            margin-bottom: 15px;
+        }
+
+        .pane-title {
+            font-weight: 600;
+            color: #1e293b;
+            font-size: 1.15rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pane-title svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .editor-textarea {
+            flex: 1;
+            min-height: 280px;
+            width: 100%;
+            padding: 18px;
+            border: 2px solid #cbd5e1;
+            border-radius: 12px;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            resize: vertical;
+            transition: all 0.3s ease;
+            background: #f8fafc;
+            color: #1e293b;
+            border-radius: 14px;
+            box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .editor-textarea:focus {
+            outline: none;
+            border-color: #6a8bff;
+            box-shadow: 0 0 0 3px rgba(106, 139, 255, 0.25), 0 4px 15px rgba(0, 0, 0, 0.08);
+            background: white;
+        }
+
+        .editor-preview {
+            flex: 1;
+            min-height: 280px;
+            width: 100%;
+            padding: 22px;
+            border: 2px solid #cbd5e1;
+            border-radius: 14px;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.7;
+            font-size: 1.05rem;
+            overflow-y: auto;
+            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.06);
+            border-radius: 14px;
+        }
+
+        .editor-preview p {
+            margin-bottom: 16px;
+        }
+
+        .editor-preview p:last-child {
+            margin-bottom: 0;
+        }
+
+        .editor-preview strong {
+            font-weight: 700;
+            color: #1e3a8a;
+        }
+
+        .editor-preview em {
+            font-style: italic;
+            color: #0c4a6e;
+        }
+
+        .editor-preview u {
+            text-decoration: underline;
+            text-decoration-color: #4f46e5;
+            text-decoration-thickness: 2px;
+        }
+
+        .editor-preview s {
+            text-decoration: line-through;
+            color: #94a3b8;
+        }
+
+        .editor-preview h1 {
+            font-size: 1.8rem;
+            margin: 1.5rem 0 1rem;
+            color: #1e293b;
+            border-bottom: 2px solid #cbd5e1;
+            padding-bottom: 8px;
+        }
+
+        .editor-preview h2 {
+            font-size: 1.5rem;
+            margin: 1.4rem 0 0.9rem;
+            color: #1e3a8a;
+        }
+
+        .editor-preview ul, .editor-preview ol {
+            padding-left: 25px;
+            margin: 15px 0;
+        }
+
+        .editor-preview li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .editor-preview blockquote {
+            border-left: 4px solid #6a8bff;
+            background: #f1f5f9;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            color: #475569;
+            font-style: italic;
+        }
+
+        .spoiler {
+            background-color: #1e293b;
+            color: #1e293b;
+            border-radius: 6px;
+            padding: 3px 8px;
+            margin: 0 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #334155;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .spoiler:hover {
+            background-color: transparent;
+            color: inherit;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        .spoiler::after {
+            content: "SPOILER";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #cbd5e1;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: rgba(30, 41, 59, 0.92);
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        .spoiler:hover::after {
+            opacity: 0;
+        }
+
+        .editor-actions {
+            display: flex;
+            gap: 16px;
+            margin-top: 10px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            flex-wrap: wrap;
+        }
+
+        .editor-save-btn {
+            background: linear-gradient(45deg, #00c853, #00e676);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(0, 200, 83, 0.35);
+            flex: 1;
+            min-width: 180px;
+            justify-content: center;
+        }
+
+        .editor-save-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 200, 83, 0.45);
+            background: linear-gradient(45deg, #00b34a, #00cc66);
+        }
+
+        .editor-save-btn:active {
+            transform: translateY(0);
+        }
+
+        .editor-clear-btn {
+            background: linear-gradient(45deg, #ff5252, #ff1744);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(255, 23, 68, 0.35);
+            flex: 1;
+            min-width: 180px;
+            justify-content: center;
+        }
+
+        .editor-clear-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 23, 68, 0.45);
+            background: linear-gradient(45deg, #e64a4a, #e6143d);
+        }
+
+        .editor-clear-btn:active {
+            transform: translateY(0);
+        }
+
+        .word-count {
+            background: #f1f5f9;
+            color: #475569;
+            font-size: 0.95rem;
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin-left: auto;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid #cbd5e1;
+        }
+
+        .word-count span {
+            font-weight: 700;
+            color: #6a8bff;
+        }
+
+        .restore-notification {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: white;
+            color: #1e293b;
+            padding: 16px 28px;
+            border-radius: 14px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            z-index: 10000;
+            transform: translateX(500px);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.05rem;
+            border-left: 5px solid #6a8bff;
+            font-weight: 500;
+            max-width: 400px;
+        }
+
+        .restore-notification.show {
+            transform: translateX(0);
+        }
+
+        .restore-notification svg {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            color: #6a8bff;
+        }
+
+        .markdown-help {
+            background: #f0f7ff;
+            border-left: 4px solid #6a8bff;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .markdown-help h4 {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #1e3a8a;
+            margin-bottom: 8px;
+        }
+
+        .markdown-help ul {
+            padding-left: 22px;
+            margin-top: 8px;
+        }
+
+        .markdown-help li {
+            margin-bottom: 5px;
+        }
+
+        .markdown-help code {
+            background: #e2e8f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+
+        .spoiler-example {
+            display: inline-block;
+            background: #1e293b;
+            color: #1e293b;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin: 0 2px;
+            font-family: monospace;
+        }
+
+        .spoiler-example::after {
+            content: "SPOILER";
+            color: #94a3b8;
+            font-size: 0.8em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .editor-panes {
+                flex-direction: column;
+            }
+            
+            .editor-actions {
+                flex-direction: column;
+            }
+            
+            .editor-save-btn, .editor-clear-btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .tab {
+                min-width: 110px;
+                padding: 10px 16px 12px 16px;
+                margin-right: 6px;
+                height: 40px;
+            }
+            
+            .tab-title {
+                font-size: 0.9rem;
+                margin-right: 24px;
+            }
+            
+            .close-tab {
+                right: 10px;
+                width: 22px;
+                height: 22px;
+                font-size: 16px;
+            }
+            
+            .add-tab-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 24px;
+            }
+            
+            .tab-content-container {
+                padding: 22px 18px;
+            }
+            
+            h1 {
+                font-size: 2.4rem;
+            }
+            
+            .editor-toolbar {
+                flex-wrap: wrap;
+                padding: 10px;
+            }
+            
+            .toolbar-btn {
+                padding: 6px 10px;
+                font-size: 0.85rem;
+                min-width: 32px;
+                height: 32px;
+            }
+            
+            .pane-title {
+                font-size: 1.05rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .tab {
+                min-width: 90px;
+                padding: 10px 12px 12px 12px;
+                margin-right: 5px;
+                height: 38px;
+            }
+            
+            .tab-title {
+                font-size: 0.85rem;
+                margin-right: 20px;
+            }
+            
+            .close-tab {
+                right: 8px;
+                width: 20px;
+                height: 20px;
+                font-size: 15px;
+            }
+            
+            .add-tab-btn {
+                width: 32px;
+                height: 32px;
+                font-size: 22px;
+                margin-left: 8px;
+            }
+            
+            .tab:last-child {
+                margin-right: 12px;
+            }
+            
+            h1 {
+                font-size: 2.1rem;
+            }
+            
+            .subtitle {
+                font-size: 1.05rem;
+            }
+            
+            .instructions {
+                font-size: 0.95rem;
+                padding: 15px;
+            }
+            
+            .content-title {
+                font-size: 1.7rem;
+            }
+            
+            .editor-title {
+                font-size: 1.6rem;
+            }
+            
+            .editor-textarea, .editor-preview {
+                padding: 15px;
+                font-size: 1rem;
+                border-radius: 12px;
+            }
+            
+            .editor-actions {
+                flex-direction: column;
+            }
+            
+            .editor-save-btn, .editor-clear-btn {
+                padding: 10px;
+                font-size: 1rem;
+            }
+            
+            .word-count {
+                font-size: 0.9rem;
+                padding: 6px 14px;
+            }
+        }
+
+        /* Animation for admin badge */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .admin-badge {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Admin Tab Management System</h1>
+        <p class="subtitle">A secure tab interface with Reddit-style markdown editing, admin-enforced limits, and data preservation controls. User-created tabs support rich formatting including spoiler tags that blur sensitive content until hovered.</p>
+        <div class="instructions">
+            <strong>System Features:</strong>
+            <ul>
+                <li>🔒 <strong>Admin Limits:</strong> Maximum 3 user-created tabs enforced</li>
+                <li>⚠️ <strong>Contextual Alerts:</strong> Different warnings for admin vs user tabs</li>
+                <li>📝 <strong>Reddit-Style Markdown:</strong> Bold, italic, underline, lists, quotes, and spoiler tags</li>
+                <li>👁️ <strong>Spoiler Protection:</strong> Sensitive content blurred until hovered</li>
+                <li>↩️ <strong>Tab Recovery:</strong> Ctrl+Shift+T to restore closed tabs</li>
+                <li>💾 <strong>Auto-Save:</strong> Content preserved in browser storage</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tabs-container">
+        <div class="admin-badge">ADMIN MODE</div>
+        <div class="tab-bar">
+            <div class="tab active" data-tab-id="tab1">
+                <span class="tab-title">Dashboard</span>
+                <span class="close-tab">&times;</span>
+            </div>
+            <div class="tab" data-tab-id="tab2">
+                <span class="tab-title">System Status</span>
+                <span class="close-tab">&times;</span>
+            </div>
+            <div class="tab" data-tab-id="tab3">
+                <span class="tab-title">User Reports</span>
+                <span class="close-tab">&times;</span>
+            </div>
+            <div class="tab" data-tab-id="tab4">
+                <span class="tab-title">Admin Logs</span>
+                <span class="close-tab">&times;</span>
+            </div>
+            <button class="add-tab-btn" id="addTabBtn" title="Add new tab">+</button>
+            <div class="drag-indicator"></div>
+        </div>
+        <div class="tab-content-container">
+            <div class="tab-content active" id="tab1">
+                <h2 class="content-title">
+                    <svg viewBox="0 0 24 24" fill="#6a8bff">
+                        <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path>
+                    </svg>
+                    Admin Dashboard
+                </h2>
+                <p class="content-body">
+                    Welcome to the secure admin portal. This interface enforces strict resource management policies to maintain system stability and security.
+                </p>
+                <p class="content-body" style="margin-top: 18px;">
+                    <strong>Resource Allocation:</strong>
+                </p>
+                <ul class="content-body" style="margin: 18px 0 18px 30px; line-height: 1.8;">
+                    <li>Maximum user-created tabs: <strong>3 per session</strong></li>
+                    <li>Tab data retention: <strong>Session-only for user tabs</strong></li>
+                    <li>Admin tab  <strong>Persistently stored</strong></li>
+                    <li>Recovery policy: <strong>Ctrl+Shift+T restores last 10 closed tabs</strong></li>
+                </ul>
+                <p class="content-body">
+                    All user activities are logged and monitored. Closing admin tabs will not delete system data, but user-created tab content is ephemeral and will be permanently lost when closed without saving.
+                </p>
+                <div class="content-footer">
+                    System Status: Operational • Security Level: High • Session ID: ADM-2026-02-06
+                </div>
+            </div>
+            <div class="tab-content" id="tab2">
+                <h2 class="content-title">
+                    <svg viewBox="0 0 24 24" fill="#10b981">
+                        <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"></path>
+                    </svg>
+                    System Status
+                </h2>
+                <p class="content-body">
+                    All core systems are operating within normal parameters. Resource utilization is optimal across all server clusters.
+                </p>
+                <div class="content-body" style="margin: 25px 0; background: #f0fdf4; padding: 20px; border-radius: 12px; border-left: 4px solid #10b981;">
+                    <p style="font-weight: 600; color: #065f46; margin-bottom: 10px;">Active Services:</p>
+                    <ul style="line-height: 1.8; padding-left: 25px;">
+                        <li>Authentication Gateway: <span style="color: #065f46; font-weight: 500;">Operational</span></li>
+                        <li>Data Processing Pipeline: <span style="color: #065f46; font-weight: 500;">Operational</span></li>
+                        <li>User Session Manager: <span style="color: #065f46; font-weight: 500;">Operational</span></li>
+                        <li>Storage Cluster: <span style="color: #065f46; font-weight: 500;">Operational</span></li>
+                        <li>Backup Systems: <span style="color: #065f46; font-weight: 500;">Operational</span></li>
+                    </ul>
+                </div>
+                <p class="content-body">
+                    Last system check performed at 14:32 UTC. Next scheduled maintenance window: February 13, 2026 (02:00-04:00 UTC). All admin tabs preserve their state across sessions. User-created tabs are session-limited and subject to the 3-tab maximum policy.
+                </p>
+                <div class="content-footer">
+                    Last Updated: Today at 14:32 UTC • Next Check: In 30 minutes
+                </div>
+            </div>
+            <div class="tab-content" id="tab3">
+                <h2 class="content-title">
+                    <svg viewBox="0 0 24 24" fill="#8b5cf6">
+                        <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-4 9H8V9h8v2zm0-4H8V5h8v2z"></path>
+                    </svg>
+                    User Reports
+                </h2>
+                <p class="content-body">
+                    This section displays aggregated user activity reports. All user-created content is ephemeral and subject to the 3-tab limit policy. Admin data remains persistent regardless of tab closure.
+                </p>
+                <div class="content-body" style="margin: 25px 0; background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0;">
+                    <p style="font-weight: 600; color: #1e293b; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <svg viewBox="0 0 24 24" fill="#6a8bff" style="width: 20px; height: 20px;">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path>
+                        </svg>
+                        Current Session Statistics
+                    </p>
+                    <ul style="line-height: 1.9; padding-left: 25px;">
+                        <li>Active User Tabs: <span id="activeUserTabs" style="font-weight: 600; color: #6a8bff;">0</span> / 3</li>
+                        <li>Tabs Closed This Session: <span id="closedTabsCount" style="font-weight: 600; color: #6a8bff;">0</span></li>
+                        <li>Tabs Restored: <span id="restoredTabsCount" style="font-weight: 600; color: #10b981;">0</span></li>
+                        <li>Storage Usage: <span style="font-weight: 600; color: #8b5cf6;">12.4 KB</span></li>
+                    </ul>
+                </div>
+                <p class="content-body">
+                    <strong>Policy Reminder:</strong> When users close their custom tabs, they receive a warning that their data will be "popped" (permanently deleted). Admin tabs display a different message indicating that system data remains intact. All tab closures are logged for audit purposes.
+                </p>
+                <div class="content-footer">
+                    Report Generated: Today • Classification: ADMIN EYES ONLY
+                </div>
+            </div>
+            <div class="tab-content" id="tab4">
+                <h2 class="content-title">
+                    <svg viewBox="0 0 24 24" fill="#ef4444">
+                        <path d="M2 2h20v20H2z" fill="none"/><path d="M17 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16H5v-2h7v2zm3-4H5v-2h10v2zm3-4H5V9h13v2z"></path>
+                    </svg>
+                    Admin Logs
+                </h2>
+                <p class="content-body">
+                    System activity log with timestamps and user actions. This data is preserved regardless of tab closure and is accessible to authorized personnel only.
+                </p>
+                <div class="content-body" style="margin: 25px 0; background: #1e293b; color: #f1f5f9; padding: 20px; border-radius: 12px; font-family: monospace; font-size: 0.95rem; line-height: 1.6;">
+                    [14:32:18] SYSTEM: Admin session started (ID: ADM-2026-02-06)<br>
+                    [14:32:45] POLICY: Enforced 3-tab limit for user-created content<br>
+                    [14:33:12] SECURITY: Verified admin credentials for tab management<br>
+                    [14:34:01] STORAGE: Allocated 12.4 KB for session data<br>
+                    [14:35:27] UI: Loaded tab interface with admin controls<br>
+                    [14:36:15] POLICY: Configured contextual alerts for tab closure<br>
+                    [14:37:02] SYSTEM: Initialized markdown parser with spoiler support<br>
+                    [14:38:44] SECURITY: Session integrity verified<br>
+                    [14:39:10] UI: Rendered admin badge with pulse animation<br>
+                    [14:40:05] SYSTEM: Ready for user interaction
+                </div>
+                <p class="content-body" style="margin-top: 20px;">
+                    <strong>Log Retention Policy:</strong> Admin logs are stored for 90 days. User tab content is not logged beyond session metadata (creation/closure timestamps). All tab restoration actions (Ctrl+Shift+T) are recorded with operator ID.
+                </p>
+                <div class="content-footer">
+                    Log Level: INFO • Encryption: AES-256 • Next Rotation: 00:00 UTC
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="restore-notification" id="restoreNotification">
+        <svg viewBox="0 0 24 24">
+            <path d="M12 5.83L14.17 8l1.41-1.41L12 3 8.41 6.59 9.83 8 12 5.83zm0 12.34L9.83 16l-1.41 1.41L12 21l3.59-3.59L14.17 16 12 18.17zM6 18l2.83-2.83L7.41 13.76 3.83 17.34 5.24 18.75 6 18zm12 0l1.41-1.41L15.83 13.76 14.42 15.17 18 18.75 19.41 17.34 18 16l-2.83 2.83z"></path>
+        </svg>
+        <span id="restoreMessage">Tab restored: <strong id="restoredTabTitle"></strong></span>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabBar = document.querySelector('.tab-bar');
+            const addTabBtn = document.getElementById('addTabBtn');
+            const dragIndicator = document.querySelector('.drag-indicator');
+            const restoreNotification = document.getElementById('restoreNotification');
+            const restoreMessage = document.getElementById('restoreMessage');
+            const restoredTabTitle = document.getElementById('restoredTabTitle');
+            const activeUserTabsEl = document.getElementById('activeUserTabs');
+            const closedTabsCountEl = document.getElementById('closedTabsCount');
+            const restoredTabsCountEl = document.getElementById('restoredTabsCount');
+            
+            let tabCounter = 5; // Start from 5 since we have 4 initial tabs
+            let newTabsCount = 0; // Count of user-created tabs
+            const MAX_NEW_TABS = 3; // Maximum new tabs allowed
+            const closedTabs = []; // Buffer for closed tabs
+            let closedTabsCount = 0;
+            let restoredTabsCount = 0;
+            let activeTab = document.querySelector('.tab.active');
+            
+            // Initialize counters
+            activeUserTabsEl.textContent = newTabsCount;
+            closedTabsCountEl.textContent = closedTabsCount;
+            restoredTabsCountEl.textContent = restoredTabsCount;
+            
+            // Set initial drag indicator position
+            updateDragIndicator();
+            
+            // Tab click handler
+            tabBar.addEventListener('click', (e) => {
+                if (e.target.classList.contains('tab') || e.target.parentElement.classList.contains('tab')) {
+                    const tab = e.target.classList.contains('tab') ? e.target : e.target.parentElement;
+                    
+                    // Skip if clicking the close button or add button
+                    if (e.target.classList.contains('close-tab') || e.target === addTabBtn) return;
+                    
+                    // Skip if already active
+                    if (tab.classList.contains('active')) return;
+                    
+                    // Deactivate current tab and activate new one
+                    document.querySelector('.tab.active')?.classList.remove('active');
+                    document.querySelector('.tab-content.active')?.classList.remove('active');
+                    
+                    tab.classList.add('active');
+                    activeTab = tab;
+                    
+                    const tabId = tab.getAttribute('data-tab-id');
+                    document.getElementById(tabId).classList.add('active');
+                    
+                    // Update drag indicator position
+                    updateDragIndicator();
+                }
+            });
+            
+            // Close tab handler
+            tabBar.addEventListener('click', (e) => {
+                if (e.target.classList.contains('close-tab')) {
+                    const tab = e.target.parentElement;
+                    const tabId = tab.getAttribute('data-tab-id');
+                    const isLastTab = document.querySelectorAll('.tab').length === 1;
+                    
+                    // Don't close if it's the last tab
+                    if (isLastTab) {
+                        alert("System policy: You can't close the last tab!");
+                        return;
+                    }
+                    
+                    // Check if it's an admin tab (tab1-tab4) or user tab
+                    const isAdminTab = ['tab1', 'tab2', 'tab3', 'tab4'].includes(tabId);
+                    
+                    if (isAdminTab) {
+                        // Admin tab warning
+                        alert("Closing tabs will not delete admin data. System logs and configurations remain intact.");
+                    } else {
+                        // User-created tab warning
+                        if (!confirm("Are you sure you want to close this tab? Your data will be popped (permanently deleted).")) {
+                            return;
+                        }
+                    }
+                    
+                    const isActiveTab = tab.classList.contains('active');
+                    const nextTab = tab.nextElementSibling?.classList.contains('tab') ? 
+                                     tab.nextElementSibling : tab.previousElementSibling;
+                    
+                    // Check if this is a user-created tab (has editor)
+                    const contentElement = document.getElementById(tabId);
+                    const isUserTab = contentElement.classList.contains('has-editor');
+                    
+                    // Save tab state before removing (for restore functionality)
+                    if (isUserTab) {
+                        const textarea = contentElement.querySelector('.editor-textarea');
+                        const tabState = {
+                            id: tabId,
+                            title: tab.querySelector('.tab-title').textContent,
+                            content: textarea ? textarea.value : '',
+                            isUserTab: true,
+                            timestamp: Date.now()
+                        };
+                        closedTabs.unshift(tabState); // Add to front of array
+                        closedTabsCount++;
+                        closedTabsCountEl.textContent = closedTabsCount;
+                        
+                        // Update user tab counter
+                        newTabsCount--;
+                        activeUserTabsEl.textContent = newTabsCount;
+                        updateTabLimitButton();
+                    }
+                    
+                    // Remove tab and content
+                    tab.remove();
+                    contentElement.remove();
+                    
+                    // Activate next tab if current was active
+                    if (isActiveTab && nextTab) {
+                        nextTab.click();
+                    }
+                    
+                    // Update drag indicator position
+                    updateDragIndicator();
+                }
+            });
+            
+            // Add tab handler
+            addTabBtn.addEventListener('click', () => {
+                // Check if we've reached the limit
+                if (newTabsCount >= MAX_NEW_TABS) {
+                    alert("ADMIN POLICY: Limit to 3 tabs per user. Please close an existing user tab before creating a new one.");
+                    return;
+                }
+                
+                const newTabId = `tab${tabCounter}`;
+                const tabTitle = `Document ${tabCounter - 4}`;
+                
+                // Create new tab element
+                const newTab = document.createElement('div');
+                newTab.className = 'tab';
+                newTab.setAttribute('data-tab-id', newTabId);
+                newTab.innerHTML = `
+                    <span class="tab-title">${tabTitle}</span>
+                    <span class="close-tab">&times;</span>
+                `;
+                
+                // Create editor content with preview pane
+                const newContent = document.createElement('div');
+                newContent.className = 'tab-content has-editor';
+                newContent.id = newTabId;
+                newContent.innerHTML = `
+                    <div class="text-editor-container">
+                        <div class="editor-header">
+                            <div class="editor-title">
+                                <svg viewBox="0 0 24 24" fill="#6a8bff">
+                                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+                                </svg>
+                                ${tabTitle}
+                            </div>
+                        </div>
+                        
+                        <div class="editor-toolbar">
+                            <div class="toolbar-group">
+                                <button class="toolbar-btn bold" data-action="bold" title="Bold (Ctrl+B)">
+                                    <strong>B</strong>
+                                </button>
+                                <button class="toolbar-btn italic" data-action="italic" title="Italic (Ctrl+I)">
+                                    <em>I</em>
+                                </button>
+                                <button class="toolbar-btn underline" data-action="underline" title="Underline (Ctrl+U)">
+                                    <u>U</u>
+                                </button>
+                                <button class="toolbar-btn" data-action="strikethrough" title="Strikethrough">
+                                    <s>S</s>
+                                </button>
+                            </div>
+                            <div class="toolbar-group">
+                                <button class="toolbar-btn" data-action="h1" title="Heading 1">#</button>
+                                <button class="toolbar-btn" data-action="h2" title="Heading 2">##</button>
+                                <button class="toolbar-btn" data-action="quote" title="Quote">"</button>
+                                <button class="toolbar-btn" data-action="list" title="List">•</button>
+                            </div>
+                            <div class="toolbar-group">
+                                <button class="toolbar-btn spoiler" data-action="spoiler" title="Spoiler (blur sensitive content)">
+                                    <span>!</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="editor-panes">
+                            <div class="editor-pane">
+                                <div class="pane-header">
+                                    <div class="pane-title">
+                                        <svg viewBox="0 0 24 24" fill="#6a8bff">
+                                            <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+                                        </svg>
+                                        Editor (Markdown)
+                                    </div>
+                                </div>
+                                <textarea class="editor-textarea" placeholder="Start writing here... Use Reddit-style markdown formatting. Type &gt;!spoiler text!&lt; for blurred spoilers.">${getDefaultEditorContent(tabCounter - 4)}</textarea>
+                            </div>
+                            <div class="editor-pane">
+                                <div class="pane-header">
+                                    <div class="pane-title">
+                                        <svg viewBox="0 0 24 24" fill="#10b981">
+                                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"></path>
+                                        </svg>
+                                        Preview
+                                    </div>
+                                </div>
+                                <div class="editor-preview" id="preview-${newTabId}"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="markdown-help">
+                            <h4>
+                                <svg viewBox="0 0 24 24" fill="#6a8bff" style="width: 18px; height: 18px;">
+                                    <path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"></path>
+                                </svg>
+                                Markdown Formatting Guide
+                            </h4>
+                            <p>Use Reddit-style syntax: <strong>**bold**</strong>, <em>*italic*</em>, <u>_underline_</u>, <s>~~strikethrough~~</s></p>
+                            <p>For spoilers (blurred content): Type <span class="spoiler-example">&gt;!spoiler text!&lt;</span> which renders as <span class="spoiler">spoiler text</span></p>
+                            <p>Other syntax: # Heading 1, ## Heading 2, &gt; quote, - list item</p>
+                        </div>
+                        
+                        <div class="editor-actions">
+                            <button class="editor-save-btn" data-tab-id="${newTabId}">
+                                <svg viewBox="0 0 24 24" fill="white" style="width: 20px; height: 20px;">
+                                    <path d="M17 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"></path>
+                                </svg>
+                                Save to Session Storage
+                            </button>
+                            <button class="editor-clear-btn" data-tab-id="${newTabId}">
+                                <svg viewBox="0 0 24 24" fill="white" style="width: 20px; height: 20px;">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"></path>
+                                </svg>
+                                Clear Editor
+                            </button>
+                            <div class="word-count">Words: <span class="word-count-value">0</span></div>
+                        </div>
+                    </div>
+                `;
+                
+                // Insert tab before the add button
+                tabBar.insertBefore(newTab, addTabBtn);
+                
+                // Add content to container
+                document.querySelector('.tab-content-container').appendChild(newContent);
+                
+                // Activate the new tab
+                document.querySelector('.tab.active')?.classList.remove('active');
+                document.querySelector('.tab-content.active')?.classList.remove('active');
+                newTab.classList.add('active');
+                newContent.classList.add('active');
+                activeTab = newTab;
+                
+                // Increment new tabs counter
+                newTabsCount++;
+                activeUserTabsEl.textContent = newTabsCount;
+                updateTabLimitButton();
+                
+                // Update drag indicator position
+                updateDragIndicator();
+                
+                // Initialize editor functionality
+                initializeEditor(newTabId);
+                
+                tabCounter++;
+            });
+            
+            // Initialize editors for existing content
+            function initializeEditor(tabId) {
+                const textarea = document.querySelector(`#${tabId} .editor-textarea`);
+                const preview = document.querySelector(`#preview-${tabId}`);
+                const wordCountElement = document.querySelector(`#${tabId} .word-count-value`);
+                const saveBtn = document.querySelector(`#${tabId} .editor-save-btn`);
+                const clearBtn = document.querySelector(`#${tabId} .editor-clear-btn`);
+                
+                // Initial render
+                renderPreview();
+                updateWordCount();
+                
+                // Update preview and word count on input
+                textarea.addEventListener('input', () => {
+                    renderPreview();
+                    updateWordCount();
+                });
+                
+                // Update word count
+                function updateWordCount() {
+                    const text = textarea.value.trim();
+                    const wordCount = text === '' ? 0 : text.split(/\s+/).filter(word => word.length > 0).length;
+                    wordCountElement.textContent = wordCount;
+                }
+                
+                // Render markdown preview
+                function renderPreview() {
+                    preview.innerHTML = renderMarkdown(textarea.value);
+                    
+                    // Add spoiler hover effect
+                    preview.querySelectorAll('.spoiler').forEach(spoiler => {
+                        spoiler.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            spoiler.style.backgroundColor = 'transparent';
+                            spoiler.style.color = 'inherit';
+                            spoiler.querySelector('::after').style.opacity = '0';
+                        });
+                    });
+                }
+                
+                // Save button
+                saveBtn.addEventListener('click', () => {
+                    const savedContent = textarea.value;
+                    const tabElement = document.querySelector(`.tab[data-tab-id="${tabId}"]`);
+                    const tabTitle = tabElement.querySelector('.tab-title').textContent;
+                    
+                    // Show visual feedback
+                    const originalText = saveBtn.innerHTML;
+                    saveBtn.innerHTML = `
+                        <svg viewBox="0 0 24 24" fill="white" style="width: 20px; height: 20px; animation: spin 1s linear infinite;">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"></path>
+                        </svg>
+                        Saving...
+                    `;
+                    
+                    setTimeout(() => {
+                        // Save to localStorage
+                        localStorage.setItem(`editor-${tabId}`, JSON.stringify({
+                            content: savedContent,
+                            timestamp: new Date().toISOString(),
+                            title: tabTitle
+                        }));
+                        
+                        saveBtn.innerHTML = `
+                            <svg viewBox="0 0 24 24" fill="white" style="width: 20px; height: 20px;">
+                                <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"></path>
+                            </svg>
+                            Saved Successfully!
+                        `;
+                        
+                        // Show success animation
+                        saveBtn.style.background = 'linear-gradient(45deg, #0d9488, #14b8a6)';
+                        saveBtn.style.boxShadow = '0 4px 15px rgba(20, 184, 166, 0.4)';
+                        
+                        setTimeout(() => {
+                            saveBtn.innerHTML = originalText;
+                            saveBtn.style.background = '';
+                            saveBtn.style.boxShadow = '';
+                        }, 2000);
+                    }, 600);
+                });
+                
+                // Clear button
+                clearBtn.addEventListener('click', () => {
+                    if (textarea.value.trim() !== '' && confirm('Are you sure you want to clear all content? This action cannot be undone.')) {
+                        textarea.value = '';
+                        renderPreview();
+                        updateWordCount();
+                    }
+                });
+                
+                // Toolbar buttons
+                const toolbarBtns = document.querySelectorAll(`#${tabId} .toolbar-btn`);
+                toolbarBtns.forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const action = btn.dataset.action;
+                        applyEditorAction(action, textarea);
+                        
+                        // Visual feedback for active button
+                        toolbarBtns.forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        
+                        setTimeout(() => {
+                            btn.classList.remove('active');
+                        }, 400);
+                        
+                        // Update preview after action
+                        renderPreview();
+                        textarea.focus();
+                    });
+                });
+                
+                // Keyboard shortcuts for editor
+                textarea.addEventListener('keydown', (e) => {
+                    if (e.ctrlKey || e.metaKey) {
+                        if (e.key === 'b' || e.key === 'B') {
+                            e.preventDefault();
+                            applyEditorAction('bold', textarea);
+                            renderPreview();
+                        } else if (e.key === 'i' || e.key === 'I') {
+                            e.preventDefault();
+                            applyEditorAction('italic', textarea);
+                            renderPreview();
+                        } else if (e.key === 'u' || e.key === 'U') {
+                            e.preventDefault();
+                            applyEditorAction('underline', textarea);
+                            renderPreview();
+                        }
+                    }
+                });
+                
+                // Initial render
+                renderPreview();
+            }
+            
+            // Apply editor formatting actions
+            function applyEditorAction(action, textarea) {
+                const start = textarea.selectionStart;
+                const end = textarea.selectionEnd;
+                const text = textarea.value;
+                const selected = text.substring(start, end);
+                
+                // If no selection, don't apply formatting
+                if (selected.trim() === '') {
+                    textarea.focus();
+                    return;
+                }
+                
+                let result = '';
+                let cursorOffset = 0;
+                
+                switch(action) {
+                    case 'bold':
+                        result = `**${selected}**`;
+                        cursorOffset = 2;
+                        break;
+                    case 'italic':
+                        result = `*${selected}*`;
+                        cursorOffset = 1;
+                        break;
+                    case 'underline':
+                        result = `_${selected}_`;
+                        cursorOffset = 1;
+                        break;
+                    case 'strikethrough':
+                        result = `~~${selected}~~`;
+                        cursorOffset = 2;
+                        break;
+                    case 'h1':
+                        result = `# ${selected}`;
+                        cursorOffset = 2;
+                        break;
+                    case 'h2':
+                        result = `## ${selected}`;
+                        cursorOffset = 3;
+                        break;
+                    case 'quote':
+                        // Add quote to each line
+                        const quoted = selected.split('\n').map(line => `> ${line}`).join('\n');
+                        result = quoted;
+                        cursorOffset = 2;
+                        break;
+                    case 'list':
+                        // Add list item to each line
+                        const listed = selected.split('\n').map(line => `- ${line}`).join('\n');
+                        result = listed;
+                        cursorOffset = 2;
+                        break;
+                    case 'spoiler':
+                        result = `>!${selected}!<`;
+                        cursorOffset = 2;
+                        break;
+                    default:
+                        result = selected;
+                }
+                
+                textarea.value = text.substring(0, start) + result + text.substring(end);
+                textarea.selectionStart = textarea.selectionEnd = start + result.length - cursorOffset;
+                textarea.focus();
+            }
+            
+            // Simple Markdown to HTML converter with spoiler support
+            function renderMarkdown(text) {
+                // Handle spoilers first: >!text!<
+                text = text.replace(/>!(.*?)!</g, '<span class="spoiler">$1</span>');
+                
+                // Handle headers
+                text = text.replace(/^# (.*$)/gim, '<h1>$1</h1>');
+                text = text.replace(/^## (.*$)/gim, '<h2>$1</h2>');
+                
+                // Handle bold, italic, underline, strikethrough
+                text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                text = text.replace(/\*(.*?)\*/g, '<em>$1</em>');
+                text = text.replace(/__(.*?)__/g, '<u>$1</u>');
+                text = text.replace(/~~(.*?)~~/g, '<s>$1</s>');
+                
+                // Handle quotes
+                text = text.replace(/^> (.*$)/gim, '<blockquote>$1</blockquote>');
+                
+                // Handle lists
+                text = text.replace(/^\s*-\s+(.*$)/gim, '<li>$1</li>');
+                text = text.replace(/(<li>.*?<\/li>)+/gs, match => {
+                    return `<ul>${match}</ul>`;
+                });
+                
+                // Handle paragraphs (split by double newlines)
+                let paragraphs = text.split(/\n\s*\n/);
+                paragraphs = paragraphs.map(p => {
+                    // Skip if already a block element
+                    if (p.startsWith('<h1') || p.startsWith('<h2') || p.startsWith('<blockquote') || p.startsWith('<ul')) {
+                        return p;
+                    }
+                    // Replace single newlines with <br>
+                    p = p.replace(/\n/g, '<br>');
+                    return `<p>${p}</p>`;
+                });
+                
+                return paragraphs.join('\n');
+            }
+            
+            // Update tab limit button state
+            function updateTabLimitButton() {
+                if (newTabsCount >= MAX_NEW_TABS) {
+                    addTabBtn.disabled = true;
+                    addTabBtn.title = `Tab limit reached (${MAX_NEW_TABS} max)`;
+                } else {
+                    addTabBtn.disabled = false;
+                    addTabBtn.title = `Add new tab (Max ${MAX_NEW_TABS})`;
+                }
+            }
+            
+            // Restore closed tab with Ctrl+Shift+T
+            document.addEventListener('keydown', (e) => {
+                // Ctrl+Shift+T or Cmd+Shift+T on Mac
+                if (e.key === 't' && (e.ctrlKey || e.metaKey) && e.shiftKey) {
+                    e.preventDefault();
+                    
+                    if (closedTabs.length === 0) {
+                        restoredTabTitle.textContent = "No tabs to restore";
+                        restoreNotification.classList.add('show');
+                        setTimeout(() => {
+                            restoreNotification.classList.remove('show');
+                        }, 2500);
+                        return;
+                    }
+                    
+                    if (newTabsCount >= MAX_NEW_TABS) {
+                        alert("ADMIN POLICY: Cannot restore tab. Limit of 3 user tabs reached. Please close an existing tab first.");
+                        return;
+                    }
+                    
+                    const lastClosed = closedTabs.shift(); // Get most recent
+                    
+                    // Create tab element
+                    const restoredTab = document.createElement('div');
+                    restoredTab.className = 'tab';
+                    restoredTab.setAttribute('data-tab-id', lastClosed.id);
+                    restoredTab.innerHTML = `
+                        <span class="tab-title">${lastClosed.title}</span>
+                        <span class="close-tab">&times;</span>
+                    `;
+                    
+                    // Create content element
+                    const restoredContent = document.createElement('div');
+                    restoredContent.className = 'tab-content has-editor';
+                    restoredContent.id = lastClosed.id;
+                    restoredContent.innerHTML = `
+                        <div class="text-editor-container">
+                            <div class="editor-header">
+                                <div class="editor-title">
+                                    <svg viewBox="0 0 24 24" fill="#6a8bff">
+                                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+                                    </svg>
+                                    ${lastClosed.title}
+                                </div>
+                            </div>
+                            
+                            <div class="editor-toolbar">
+                                <div class="toolbar-group">
+                                    <button class="toolbar-btn bold" data-action="bold" title="Bold (Ctrl+B)">
+                                        <strong>B</strong>
+                                    </button>
+                                    <button class="toolbar-btn italic" data-action="italic" title="Italic (Ctrl+I)">
+                                        <em>I</em>
+                                    </button>
+                                    <button class="toolbar-btn underline" data-action="underline" title="Underline (Ctrl+U)">
+                                        <u>U</u>
+                                    </button>
+                                    <button class="toolbar-btn" data-action="strikethrough" title="Strikethrough">
+                                        <s>S</s>
+                                    </button>
+                                </div>
+                                <div class="toolbar-group">
+                                    <button class="toolbar-btn" data-action="h1" title="Heading 1">#</button>
+                                    <button class="toolbar-btn" data-action="h2" title="Heading 2">##</button>
+                                    <button class="toolbar-btn" data-action="quote" title="Quote">"</button>
+                                    <button class="toolbar-btn" data-action="list" title="List">•</button>
+                                </div>
+                                <div class="toolbar-group">
+                                    <button class="toolbar-btn spoiler" data-action="spoiler" title="Spoiler (blur sensitive content)">
+                                        <span>!</span>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="editor-panes">
+                                <div class="editor-pane">
+                                    <div class="pane-header">
+                                        <div class="pane-title">
+                                            <svg viewBox="0 0 24 24" fill="#6a8bff">
+                                                <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+                                            </svg>
+                                            Editor (Markdown)
+                                        </div>
+                                    </div>
+                                    <textarea class="editor-textarea" placeholder="Start writing here...">${lastClosed.content}</textarea>
+                                </div>
+                                <div class="editor-pane">
+                                    <div class="pane-header">
+                                        <div class="pane-title">
+                                            <svg viewBox="0 0 24 24" fill="#10b981">
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"></path>
+                                            </svg>
+                                            Preview
+                                        </div>
+                                    </div>
+                                    <div class="editor-preview" id="preview-${lastClosed.id}"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="markdown-help">
+                                <h4>
+                                    <svg viewBox="0 0 24 24" fill="#6a8bff" style="width: 18px; height: 18px;">
+                                        <path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"></path>
+                                    </svg>
+                                    Markdown Formatting Guide
+                                </h4>
+                                <p>Use Reddit-style syntax: <strong>**bold**</strong>, <em>*italic*</em>, <u>_underline_</u>, <s>~~strikethrough~~</s></p>
+                                <p>For spoilers (blurred content): Type <span class="spoiler-example">&gt;!spoiler text!&lt;</span> which renders as <span class="spoiler">spoiler text</span></p>
+                                <p>Other syntax: # Heading 1, ## Heading 2, &gt; quote, - list item</p>
+                            </div>
+                            
+                            <div class="editor-actions">
+                                <button class="editor-save-btn" data-tab-id="${lastClosed.id}">
+                                    <svg viewBox="0 0 24 24" fill="white" style="width: 20px; height: 20px;">
+                                        <path d="M17 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"></path>
+                                    </svg>
+                                    Save to Session Storage
+                                </button>
+                                <button class="editor-clear-btn" data-tab-id="${lastClosed.id}">
+                                    <svg viewBox="0 0 24 24" fill="white" style="width: 20px; height: 20px;">
+                                        <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"></path>
+                                    </svg>
+                                    Clear Editor
+                                </button>
+                                <div class="word-count">Words: <span class="word-count-value">0</span></div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    // Insert before add button
+                    tabBar.insertBefore(restoredTab, addTabBtn);
+                    
+                    // Add content
+                    document.querySelector('.tab-content-container').appendChild(restoredContent);
+                    
+                    // Activate the restored tab
+                    document.querySelector('.tab.active')?.classList.remove('active');
+                    document.querySelector('.tab-content.active')?.classList.remove('active');
+                    restoredTab.classList.add('active');
+                    restoredContent.classList.add('active');
+                    activeTab = restoredTab;
+                    
+                    // Update counters
+                    newTabsCount++;
+                    activeUserTabsEl.textContent = newTabsCount;
+                    restoredTabsCount++;
+                    restoredTabsCountEl.textContent = restoredTabsCount;
+                    updateTabLimitButton();
+                    
+                    // Initialize editor
+                    initializeEditor(lastClosed.id);
+                    
+                    // Show notification
+                    restoredTabTitle.textContent = lastClosed.title;
+                    restoreNotification.classList.add('show');
+                    setTimeout(() => {
+                        restoreNotification.classList.remove('show');
+                    }, 3000);
+                    
+                    // Update drag indicator
+                    updateDragIndicator();
+                }
+            });
+            
+            // Update drag indicator position
+            function updateDragIndicator() {
+                if (!activeTab) return;
+                
+                const rect = activeTab.getBoundingClientRect();
+                const tabBarRect = tabBar.getBoundingClientRect();
+                
+                dragIndicator.style.width = `${rect.width}px`;
+                dragIndicator.style.transform = `translateX(${rect.left - tabBarRect.left}px)`;
+            }
+            
+            // Get default content for new editor tabs
+            function getDefaultEditorContent(tabNumber) {
+                const defaults = [
+                    "# Welcome to Your Secure Document\n\nStart writing here using **Reddit-style markdown**. This content is session-only and will be deleted when you close the tab.\n\n## Formatting Examples\n\n- **Bold text** with \\*\\*bold\\*\\*\n- *Italic text* with \\*italic\\*\n- _Underline_ with \\_underline\\_\n- ~~Strikethrough~~ with \\~\\~strikethrough\\~\\~\n- >!This is a spoiler that will be blurred!<\n\n> This is a quote block\n\n- List item 1\n- List item 2\n- List item 3\n\nRemember to click **Save to Session Storage** to preserve your work during this session!",
+                    "# Confidential Report\n\n>!This document contains sensitive information that should not be shared outside the organization!<\n\n## Executive Summary\n\n**Project Phoenix** has exceeded all Q1 targets. Revenue is up **27%** year-over-year, with particularly strong performance in the European market (*+42%*).\n\n### Key Metrics\n\n- User growth: **185,000** new accounts\n- System uptime: _99.998%_\n- Security incidents: ~~3~~ 0 (all resolved)\n\n>!The acquisition of TechNova will be announced next Tuesday at 9 AM EST!<\n\n## Next Steps\n\n1. Finalize Q2 budget allocations\n2. Schedule board presentation\n3. Prepare press release\n\n> Confidentiality Notice: This document contains proprietary information. Unauthorized distribution is prohibited.",
+                    "# Meeting Notes - Project Chimera\n\n**Date:** February 6, 2026  \n**Attendees:** Alex, Sam, Jordan, Taylor\n\n## Agenda Items\n\n1. Review Q1 progress\n2. Discuss resource allocation\n3. Plan Q2 milestones\n\n## Decisions Made\n\n- Approved budget increase of **15%** for engineering team\n- _Postponed_ UI redesign until after core features are complete\n- Jordan to lead the integration effort with Acme Corp\n\n## Action Items\n\n- [x] Sam: Finalize vendor contracts\n- [ ] Taylor: Prepare security audit report\n- [ ] Alex: Schedule client demo for Feb 20\n\n>!We've secured Series C funding of $42M led by Vertex Ventures!<\n\n## Next Meeting\n\n**February 13, 2026** at 10:00 AM EST in Conference Room B\n\n*Please come prepared with Q2 milestone proposals.*"
+                ];
+                
+                return defaults[tabNumber - 1] || "# New Document\n\nStart writing your content here...";
+            }
+            
+            // Initialize drag indicator
+            window.addEventListener('load', updateDragIndicator);
+            window.addEventListener('resize', updateDragIndicator);
+            
+            // Initialize any existing editors (none initially, but good practice)
+            document.querySelectorAll('.has-editor').forEach(tabContent => {
+                const tabId = tabContent.id;
+                initializeEditor(tabId);
+            });
+        });
+    </script>
+</body>
+</html>
