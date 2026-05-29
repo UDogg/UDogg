@@ -59,7 +59,7 @@ Oh, and yes — I use emojis *way too much* 😄.
 
 </div>
 
-### ⚙️ Tech Queue
+### ⚙️ Tech ~~Stack~~ Queue
 
 <p align="center">
   <img src="https://skillicons.dev/icons?i=c,cpp,rust,go,python,java,linux,docker,kubernetes,react,ts,nodejs,postgres,redis" />
