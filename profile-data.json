@@ -1,0 +1,65 @@
+{
+  "lastUpdated": "2026-10-11T11:05:00Z",
+  "currentVibe": "building, experimenting, overthinking code at 3am ✨",
+  "profileStats": {
+    "yearsOfCoding": 6,
+    "projectsBuilt": 42,
+    "coffeeConsumed": "∞",
+    "syntheszerHours": 6000,
+    "animeEpisodesWatched": "too many to count"
+  },
+  "featuredProjects": [
+    {
+      "name": "3D Portfolio",
+      "emoji": "🌀",
+      "url": "https://threejs-black.vercel.app/",
+      "description": "interactive 3D playground with vibes",
+      "tech": ["Three.js", "React", "GLSL"]
+    },
+    {
+      "name": "isekai.html",
+      "emoji": "🌀",
+      "url": "http://udogg.github.io/isekai.html",
+      "description": "comedic deep-dive into anime storytelling (password: j)",
+      "tech": ["HTML", "CSS", "JS"]
+    },
+    {
+      "name": "todo.html",
+      "emoji": "✅",
+      "url": "https://udogg.github.io/todo.html",
+      "description": "lightweight life organizer, surprisingly satisfying",
+      "tech": ["Vanilla JS"]
+    }
+  ],
+  "dailyThoughts": [
+    "code is magic, but debugging is necromancy 🖤",
+    "systems are just chaos with better organization",
+    "the best code is the code that makes someone smile",
+    "anime is unironically deep, fight me",
+    "if it works, it's not overengineered enough",
+    "synthesizers are just computers but they sound better"
+  ],
+  "skills": {
+    "languages": ["Python", "C++", "TypeScript", "Rust", "Java", "Go", "C", "C#"],
+    "frameworks": ["React", "Node.js", "Django", "Spring", "Next.js", "FastAPI"],
+    "tools": ["Docker", "Kubernetes", "PostgreSQL", "Redis", "Linux", "Git"]
+  },
+  "collaborationStyle": {
+    "pace": "fast",
+    "communication": "overcommunicate > assume",
+    "feedback": "direct and evidence-based",
+    "leadership": "shared > dictatorial",
+    "core": "accountability > blame"
+  },
+  "currentlyExploring": [
+    "LLMs and NLP systems",
+    "Rust for systems programming",
+    "synthesizer sound design",
+    "concurrent systems architecture"
+  ],
+  "socialLinks": {
+    "portfolio": "https://threejs-black.vercel.app/",
+    "linkedin": "https://www.linkedin.com/in/utkarsh-choudhary",
+    "email": "choudharyu2003@gmail.com"
+  }
+}
