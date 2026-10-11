@@ -1,44 +1,56 @@
 ![](assets/Bottom_up.svg)
 
+<div align="center" style="max-width:1200px; margin:0 auto; padding:24px 16px 8px; background:linear-gradient(180deg, rgba(10,14,30,0.85), rgba(10,14,30,0.65)); border:1px solid rgba(96,165,250,0.18); border-radius:18px; box-shadow:0 18px 45px rgba(0,0,0,0.35);">
+
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&center=true&vCenter=true&width=700&lines=hey+there,+i'm+utkarsh+✨;full-stack+alchemist;NLP+mad+scientist;synthesizer+wizard+🎹;professional+emoji+deployer;building+absurd+things+since+2020)](https://github.com/UDogg)
 
-<h2 align="center">
+<h2 align="center" style="margin:12px 0 8px;">
   <img src="https://media.giphy.com/media/w1OBpBd7kJqHrJnJ13/giphy.gif" width="50">
   <p align="center"><a href="https://threejs-black.vercel.app/" target="_blank"><img width="80%" alt="let's build something ridiculous" src="https://see.fontimg.com/api/renderfont4/BxY01?text=chaos%20%26%20code&font=Retro%20Computer&fontsize=100&bg=000&textColor=36BCF7" /></a></p>
 </h2>
 
-<h3 align="center"><i>🎓 Penn State | 🌐 <a href="https://threejs-black.vercel.app/" target="_blank">3D Portfolio</a> | 💼 Full-Stack Dev | 🎹 Synth Nerd | 📚 Anime Connoisseur</i></h3>
-
----
-
-<!-- NAV TABS -->
-<div align="center">
-
-[![About Me](https://img.shields.io/badge/About_Me-111827?style=for-the-badge&logo=github&logoColor=white)](#about-me)
-[![The Tech Grimoire](https://img.shields.io/badge/Tech_Grimoire-1d4ed8?style=for-the-badge&logo=stackshare&logoColor=white)](#the-tech-grimoire-)
-[![My Creations](https://img.shields.io/badge/My_Creations-059669?style=for-the-badge&logo=vercel&logoColor=white)](#the-creations-)
-[![Why I Code](https://img.shields.io/badge/Why_I_Code-7c3aed?style=for-the-badge&logo=notion&logoColor=white)](#why-i-actually-code-)
-[![Teamwork Playbook](https://img.shields.io/badge/Teamwork_Playbook-db2777?style=for-the-badge&logo=confluence&logoColor=white)](#how-i-work-with-other-humans-)
-[![GitHub Stats](https://img.shields.io/badge/GitHub_Stats-ea580c?style=for-the-badge&logo=github&logoColor=white)](#stats--proof-im-not-making-this-up-)
+<h3 align="center" style="margin:0 0 18px; color:#dfe9ff; font-weight:500;"><i>🎓 Penn State | 🌐 <a href="https://threejs-black.vercel.app/" target="_blank">3D Portfolio</a> | 💼 Full-Stack Dev | 🎹 Synth Nerd | 📚 Anime Connoisseur</i></h3>
 
 </div>
 
 ---
 
-<a id="about-me"></a>
-## 🧑‍💻 About Me
+<div id="tab-container" style="max-width:1200px; margin:18px auto; display:block;">
 
-i'm a penn state grad who accidentally became obsessed with the idea that **code is magic**. literally. i write incantations that make computers do things, and sometimes those things are useful and sometimes they're just *really* entertaining.
+<!-- TAB BUTTONS -->
+<div style="display:flex; flex-wrap:wrap; gap:8px; padding:12px 16px; background:linear-gradient(to bottom, rgba(15,23,42,0.8), rgba(10,14,30,0.7)); border:1px solid rgba(96,165,250,0.15); border-bottom:none; border-radius:16px 16px 0 0; backdrop-filter:blur(8px); position:relative; z-index:10;">
 
-by day: full-stack developer who thinks about systems architecture and gets weirdly excited about optimizing queries.
-by night: nLP tinkerer, anime analysis marathoner, synth player who's probably composing a waltz right now 🎹
-always: emoji enthusiast, meme curator, and professional "wait, what if we tried..." person.
+<button onclick="showTab(event, 'about')" class="tab-btn active-tab" style="background:linear-gradient(to bottom, #1f2937, #111827); color:#e2e8f0; border:1px solid rgba(96,165,250,0.24); border-bottom:none; border-radius:10px 10px 0 0; padding:10px 16px; font-weight:700; letter-spacing:0.2px; cursor:pointer; transition:all 0.25s ease; box-shadow:0 6px 16px rgba(15,23,42,0.2); position:relative; margin-bottom:-2px; height:44px;"><span style="position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(to right, #6a11cb, #2575fc); border-radius:2px;"></span>About Me</button>
+
+<button onclick="showTab(event, 'tech')" class="tab-btn" style="background:linear-gradient(to bottom, #1e293b, #0f172a); color:#cbd5e1; border:1px solid rgba(96,165,250,0.24); border-bottom:none; border-radius:10px 10px 0 0; padding:10px 16px; font-weight:700; letter-spacing:0.2px; cursor:pointer; transition:all 0.25s ease; box-shadow:0 6px 16px rgba(15,23,42,0.2); height:42px;">Tech Grimoire</button>
+
+<button onclick="showTab(event, 'creations')" class="tab-btn" style="background:linear-gradient(to bottom, #0f172a, #111827); color:#cbd5e1; border:1px solid rgba(96,165,250,0.24); border-bottom:none; border-radius:10px 10px 0 0; padding:10px 16px; font-weight:700; letter-spacing:0.2px; cursor:pointer; transition:all 0.25s ease; box-shadow:0 6px 16px rgba(15,23,42,0.2); height:42px;">My Creations</button>
+
+<button onclick="showTab(event, 'why')" class="tab-btn" style="background:linear-gradient(to bottom, #1f2937, #111827); color:#cbd5e1; border:1px solid rgba(96,165,250,0.24); border-bottom:none; border-radius:10px 10px 0 0; padding:10px 16px; font-weight:700; letter-spacing:0.2px; cursor:pointer; transition:all 0.25s ease; box-shadow:0 6px 16px rgba(15,23,42,0.2); height:42px;">Why I Code</button>
+
+<button onclick="showTab(event, 'teamwork')" class="tab-btn" style="background:linear-gradient(to bottom, #1f2937, #111827); color:#cbd5e1; border:1px solid rgba(96,165,250,0.24); border-bottom:none; border-radius:10px 10px 0 0; padding:10px 16px; font-weight:700; letter-spacing:0.2px; cursor:pointer; transition:all 0.25s ease; box-shadow:0 6px 16px rgba(15,23,42,0.2); height:42px;">Teamwork</button>
+
+<button onclick="showTab(event, 'stats')" class="tab-btn" style="background:linear-gradient(to bottom, #1f2937, #111827); color:#cbd5e1; border:1px solid rgba(96,165,250,0.24); border-bottom:none; border-radius:10px 10px 0 0; padding:10px 16px; font-weight:700; letter-spacing:0.2px; cursor:pointer; transition:all 0.25s ease; box-shadow:0 6px 16px rgba(15,23,42,0.2); height:42px;">GitHub Stats</button>
+
+</div>
+
+<!-- TAB CONTENT -->
+<div style="max-width:1200px; background:white; border-radius:0 0 18px 18px; box-shadow:0 18px 35px rgba(15,23,42,0.28); overflow:hidden;">
+
+<!-- ABOUT TAB -->
+<div id="about" class="tab-content" style="display:block; padding:26px 24px; background:linear-gradient(180deg, rgba(15,23,42,0.95), rgba(30,41,59,0.88)); border:1px solid rgba(148,163,184,0.22); border-radius:0 0 18px 18px;">
+
+<h2 style="color:#e2e8f0; margin-bottom:18px; font-size:1.8rem;">🧑‍💻 About Me</h2>
+
+I'm a Penn State grad who accidentally became obsessed with the idea that **code is magic**. literally. I write incantations that make computers do things, and sometimes those things are useful and sometimes they're just *really* entertaining.
+
+By day: full-stack developer who gets unreasonably excited about systems architecture and query optimization. By night: NLP tinkerer, anime analysis marathoner, synth player, and chaos gremlin with a habit of turning weird ideas into actual projects.
 
 ### my origin story 🎬
 
-i code because **creation is translation** — taking the chaos in my brain and turning it into something people can actually *use* or *play with*. every project is me saying "what if this could exist?" and then being stubborn enough to make it happen.
+I code because **creation is translation** — taking the chaos in my brain and turning it into something people can actually *use* or *play with*. Each project is me saying, "what if this could exist?" and then becoming stubborn enough to make it happen.
 
-> "God help and forgive me, I want to build something that's gonna outlive me." — Hamilton (yeah i quote musicals unironically)
+> "God help and forgive me, I want to build something that's gonna outlive me." — Hamilton (yeah I quote musicals unironically)
 
 <p align="center">
   <img src="https://media.giphy.com/media/eNAsjO55tPbgaor7ma/giphy.gif" width="300" alt="coding in the zone">
@@ -46,23 +58,23 @@ i code because **creation is translation** — taking the chaos in my brain and 
 
 ### things that make me tick 🔮
 
-- 🎹 **synthesizer nerd** — 6+ years of classical, waltz, and whatever sounds cool vibes. my keyboard is basically an extension of my brain
-- 📚 **anime/sci-fi addict** — literally my entire instagram is memes. literally.
-- 💡 **"aha!" moment junkie** — the feeling when the code finally compiles and does the thing? *chef's kiss*
-- 🧠 **overcomplicate things for fun** — "but what if we added ML to this todo app?" / "what if we built it in Rust?" / "what if—" yeah that's me
-- 🌀 **chaos embracer** — my code is messy, my thoughts are messier, my desk is messiest. but somehow it all works out
-- 😄 **emoji warrior** — i use more emojis than actual words (this readme is proof)
+- 🎹 **synthesizer nerd** — 6+ years of classical, waltz, and whatever sounds cool vibes
+- 📚 **anime/sci-fi addict** — literally my entire Instagram is memes
+- 💡 **"aha!" moment junkie** — the feeling when the code finally compiles and does the thing? chef's kiss
+- 🧠 **overcomplicate things for fun** — "but what if we added ML to this todo app?"
+- 🌀 **chaos embracer** — my code is messy, my thoughts are messier, my desk is messiest
+- 😄 **emoji warrior** — I use more emojis than actual words
 
 <p align="center">
   <img src="https://media.giphy.com/media/PiQejEf31116URju4V/giphy.gif" width="250"/>
 </p>
 
----
+</div>
 
-<a id="the-tech-grimoire-"></a>
-## 🧙‍♂️ The Tech Grimoire
+<!-- TECH TAB -->
+<div id="tech" class="tab-content" style="display:none; padding:26px 24px; background:linear-gradient(180deg, rgba(15,23,42,0.95), rgba(17,24,39,0.9)); border:1px solid rgba(96,165,250,0.22); border-radius:0 0 18px 18px;">
 
-*aka "what i've been playing with in the void"*
+<h2 style="color:#e2e8f0; margin-bottom:18px; font-size:1.8rem;">🧙‍♂️ The Tech Grimoire</h2>
 
 ### programming languages (in order of obsession level) 🔥
 
@@ -82,30 +94,32 @@ i code because **creation is translation** — taking the chaos in my brain and 
   <img src="https://skillicons.dev/icons?i=c,cpp,rust,go,python,java,linux,docker,kubernetes,react,ts,nodejs,postgres,redis,mongodb" />
 </p>
 
-**actually know what i'm doing:** Python, C++, TypeScript, Rust
+**actually know what I'm doing:** Python, C++, TypeScript, Rust
+
 **competently dangerous:** Java, Go, C, C#
+
 **once per lunar cycle:** Solidity, Zig, literally whatever catches my eye
+
 **will learn for fun:** everything else
 
 <p align="center">
   <img src="https://media.giphy.com/media/L8K62iTDkzGX6/giphy.gif" width="300" alt="code flowing like music">
 </p>
 
----
+</div>
 
-<a id="the-creations-"></a>
-## 🎨 The Creations
+<!-- CREATIONS TAB -->
+<div id="creations" class="tab-content" style="display:none; padding:26px 24px; background:linear-gradient(180deg, rgba(9,18,26,0.95), rgba(13,27,42,0.88)); border:1px solid rgba(52,211,153,0.22); border-radius:0 0 18px 18px;">
 
-*aka "proof that i've actually built things and they (mostly) work"*
+<h2 style="color:#e2e8f0; margin-bottom:18px; font-size:1.8rem;">🎨 The Creations</h2>
 
 ### 🌀 **[3D Portfolio](https://threejs-black.vercel.app/)** — the flex
 
-my portfolio is literally 3D. it spins. it's interactive. it's built with Three.js & React Three Fiber because why have a boring static site when you can have *vibes*?
-
-think of it as "what if portfolios could dance?" and i was like "yes, let's do that."
+My portfolio is literally 3D. It spins. It's interactive. It's built with Three.js & React Three Fiber because why have a boring static site when you can have *vibes*?
 
 **built with:** Three.js, React, GLSL shaders, pure chaos & creativity
-**why it exists:** because static websites are boring and i had a fever dream about floating text
+
+**why it exists:** because static websites are boring and I had a fever dream about floating text
 
 <p align="center">
   <img src="https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif" width="400"/>
@@ -117,113 +131,114 @@ think of it as "what if portfolios could dance?" and i was like "yes, let's do t
 
 *(password: "j")*
 
-a comedic, unhinged deep-dive into anime tropes, isekai storytelling, and the absurdity of web design told through the lens of someone who's watched too much anime.
+A comedic, unhinged deep-dive into anime tropes, isekai storytelling, and the absurdity of web design told through the lens of someone who's watched too much anime.
 
-⚠️ **warning:** has spicy language. it's intentionally chaotic. it's art. 🚨
+⚠️ **warning:** has spicy language. It's intentionally chaotic. It's art. 🚨
 
-**why it exists:** i got obsessed with anime's narrative structure and decided the only way to properly explain it was through an interactive mess of html/css/js
+**why it exists:** I got obsessed with anime's narrative structure and decided the only way to properly explain it was through an interactive mess of HTML/CSS/JS
 
 ---
 
 ### ✅ **[todo.html](https://udogg.github.io/todo.html)** — the zen master
 
-a lightweight, incredibly satisfying life organizer. it's simple. it's elegant. it makes organizing your chaos actually *fun*.
+A lightweight, incredibly satisfying life organizer. It's simple. It's elegant. It makes organizing your chaos actually *fun*.
 
 **built with:** vanilla JS, pure vibes, no frameworks needed
-**why it exists:** because sometimes you need to prove that simple > complex, and also i needed to organize my life at 3am
+
+**why it exists:** because sometimes you need to prove that simple > complex, and also I needed to organize my life at 3am
 
 ---
 
 ### 💼 **[form.html](https://udogg.github.io/form.html)** — the love letter
 
-made this for my mom's work. small project, *massive* impact. reminder that code isn't just about being clever—it's about making someone's day easier.
+Made this for my mom's work. Small project, *massive* impact. Reminder that code isn't just about being clever—it's about making someone's day easier.
 
 **built with:** HTML/CSS/JS, love, caffeine
-**why it exists:** because my mom needed help organizing her work and i wanted to prove that even tiny tools matter
+
+**why it exists:** because my mom needed help organizing her work and I wanted to prove that even tiny tools matter
 
 ---
 
 ### ⚡ **[conc.html](https://udogg.github.io/conc.html)** — the systems poetry
 
-a Penn State ENG 202C project that visualizes concurrency in a way that actually makes *sense*. systems programming meets visual design. beautiful chaos visualized.
+A Penn State ENG 202C project that visualizes concurrency in a way that actually makes *sense*. Systems programming meets visual design. Beautiful chaos visualized.
 
 **built with:** Canvas API, JavaScript, suffering, realization
-**why it exists:** because threads/processes/concurrency confuses everyone and i wanted to make it click for people
+
+**why it exists:** because threads/processes/concurrency confuses everyone and I wanted to make it click for people
 
 ---
 
 ### 🔐 **[b.pdf](https://udogg.github.io/b.pdf)** — the deep dive
 
-a full research paper on botnets, cybersecurity, and how the internet's shadow ecosystem actually works. yes, i write technical papers. no, it's not boring.
+A full research paper on botnets, cybersecurity, and how the internet's shadow ecosystem actually works. Yes, I write technical papers. No, it's not boring.
 
 **built with:** rigor, obsessive research, 47 cups of coffee
+
 **why it exists:** because understanding how systems *break* teaches you how to build them better
 
----
+</div>
 
-<a id="why-i-actually-code-"></a>
-## 💡 Why I Actually Code
+<!-- WHY I CODE TAB -->
+<div id="why" class="tab-content" style="display:none; padding:26px 24px; background:linear-gradient(180deg, rgba(24,15,39,0.95), rgba(29,19,48,0.88)); border:1px solid rgba(168,85,247,0.22); border-radius:0 0 18px 18px;">
 
-everyone asks "why code?" like it's a weird flex. here's the honest answer:
+<h2 style="color:#e2e8f0; margin-bottom:18px; font-size:1.8rem;">💡 Why I Actually Code</h2>
 
-**creation is translation.** i take the chaos in my brain — ideas, emotions, "what ifs," broken dreams, random shower thoughts — and i translate them into *things*. things people can see, use, break, laugh at, learn from.
+Everyone asks, "why code?" like it's a weird flex. Here's the honest answer:
 
-every line of code is a tiny conversation between me and the computer. some conversations are angry (2am debugging). some are joyful (it finally compiled!). some are profound (wait, this actually matters).
+**creation is translation.** I take the chaos in my brain — ideas, emotions, "what ifs," broken dreams, random shower thoughts — and I translate them into *things*. Things people can see, use, break, laugh at, learn from.
 
-every project I've built tells a story:
-- isekai.html = "i love anime so much i'm gonna make it interactive"
-- todo.html = "i'm chaotic and need help"
-- form.html = "i love my mom and want to help her"
-- conc.html = "wait, systems are actually beautiful if you visualize them right"
+Every line of code is a tiny conversation between me and the computer. Some conversations are angry (2am debugging). Some are joyful (it finally compiled!). Some are profound (wait, this actually matters).
 
-coding, for me, isn't just syntax and systems. **it's how i express myself, connect with others, and keep evolving.** one build, one bug fix, one "wait that's actually cool" moment at a time.
+Every project I've built tells a story:
+- isekai.html = "I love anime so much I'm gonna make it interactive"
+- todo.html = "I'm chaotic and need help"
+- form.html = "I love my mom and want to help her"
+- conc.html = "Wait, systems are actually beautiful if you visualize them right"
+
+Coding, for me, isn't just syntax and systems. **it's how I express myself, connect with others, and keep evolving.** One build, one bug fix, one "wait that's actually cool" moment at a time.
 
 <p align="center">
   <img src="https://media.giphy.com/media/j5QcmXoFWl4Q0/giphy.gif" width="250"/>
 </p>
 
----
+</div>
 
-<a id="how-i-work-with-other-humans-"></a>
-## 🤝 How I Work With Other Humans
+<!-- TEAMWORK TAB -->
+<div id="teamwork" class="tab-content" style="display:none; padding:26px 24px; background:linear-gradient(180deg, rgba(33,16,34,0.95), rgba(49,20,42,0.88)); border:1px solid rgba(244,114,182,0.2); border-radius:0 0 18px 18px;">
 
-<details>
-  <summary><b>⚡ CLICK FOR: "how to NOT annoy utkarsh" manual (surprisingly concise)</b> 👇</summary>
+<h2 style="color:#e2e8f0; margin-bottom:18px; font-size:1.8rem;">🤝 How I Work With Other Humans</h2>
 
-  <br>
+### 🧭 my collaboration manual — "the playbook"
 
-  ### 🧭 my collaboration manual — "the playbook"
+**work style:** I like sprinting ahead, leaving polish time at the end. Chaos is fine. Unclear roles = not fine.
 
-  **work style:** i like sprinting ahead, leaving polish time at the end. chaos is fine. unclear roles = not fine.
-  
-  **strengths:** frontend-backend integration, system design that doesn't hurt your brain, technical documentation that's actually readable
-  
-  **communication:** overcommunicate > assume. direct feedback (even harsh) > silent resentment. push back if i'm going too fast — i adapt instantly.
-  
-  **leadership:** i can lead, but i prefer *shared* leadership. leadership = facilitating, not dictating.
-  
-  **conflict resolution:** evidence-based discussions. reset expectations over brewing resentment. i de-escalate, never escalate.
-  
-  **core principles:**
-  - ✅ finish early, refine together (not rush last-minute)
-  - 💬 no surprises — communicate *everything*
-  - ⚖️ accountability > blame
-  - 🤝 respect, even when we disagree hard
-  - 🎉 shared credit always (your wins are our wins)
-  - 🧠 clarity beats control every single time
+**strengths:** frontend-backend integration, system design that doesn't hurt your brain, technical documentation that's actually readable
 
-  **pet peeves:** vagueness, ghost communication, passive-aggressive feedback, unclear deadlines
-  
-  **love:** transparency, ambition, people who ship things, good memes, rigorous thinking
+**communication:** overcommunicate > assume. Direct feedback (even harsh) > silent resentment. Push back if I'm going too fast — I adapt instantly.
 
-</details>
+**leadership:** I can lead, but I prefer *shared* leadership. Leadership = facilitating, not dictating.
 
----
+**conflict resolution:** evidence-based discussions. Reset expectations over brewing resentment. I de-escalate, never escalate.
 
-<a id="stats--proof-im-not-making-this-up-"></a>
-## 📊 GitHub Statistics
+**core principles:**
+- ✅ finish early, refine together (not rush last-minute)
+- 💬 no surprises — communicate *everything*
+- ⚖️ accountability > blame
+- 🤝 respect, even when we disagree hard
+- 🎉 shared credit always (your wins are our wins)
+- 🧠 clarity beats control every single time
 
-<div align="center">
+**pet peeves:** vagueness, ghost communication, passive-aggressive feedback, unclear deadlines
+
+**love:** transparency, ambition, people who ship things, good memes, rigorous thinking
+
+</div>
+
+<!-- STATS TAB -->
+<div id="stats" class="tab-content" style="display:none; padding:26px 24px; background:linear-gradient(180deg, rgba(36,22,8,0.95), rgba(48,28,10,0.9)); border:1px solid rgba(251,146,60,0.22); border-radius:0 0 18px 18px;">
+
+<h2 style="color:#e2e8f0; margin-bottom:18px; font-size:1.8rem;">📊 GitHub Statistics</h2>
 
 | **🔥 Streak** | **💻 Languages Used** |
 |---|---|
@@ -241,6 +256,10 @@ coding, for me, isn't just syntax and systems. **it's how i express myself, conn
 
 </div>
 
+</div>
+
+</div>
+
 ---
 
 ## 🌀 Philosophy
@@ -251,15 +270,19 @@ coding, for me, isn't just syntax and systems. **it's how i express myself, conn
 
 ---
 
-## random stuff about me 🎭
+<div style="max-width:1200px; margin:22px auto; padding:26px 24px; background:linear-gradient(180deg, rgba(15,23,42,0.95), rgba(17,24,39,0.9)); border:1px solid rgba(148,163,184,0.22); border-radius:18px; box-shadow:0 18px 35px rgba(15,23,42,0.28);">
 
-- 🎹 **synth wizard:** 6+ years of playing. currently obsessed with making waltz sounds in Logic Pro
+### random stuff about me 🎭
+
+- 🎹 **synth wizard:** 6+ years of playing. Currently obsessed with making waltz sounds in Logic Pro
 - 📚 **media diet:** sci-fi (Dune, Foundation, Neuromancer), anime (Attack on Titan, Evangelion, Demon Slayer), light novels (basically anything caffeinated)
-- 🖼️ **instagram:** literally just tech memes and synth pics. you've been warned
+- 🖼️ **Instagram:** literally just tech memes and synth pics. You've been warned
 - 💭 **thought process:** "what if we added ML?" / "what if we built it in Rust?" / "what if we made it 3D?" — yes, always
 - 🌙 **productivity hours:** 2pm-10pm, with random 3am coding sessions
 - ☕ **fuel:** coffee, more coffee, occasionally water
 - 😄 **humor style:** dad jokes, tech memes, self-deprecating chaos, references to things nobody asked about
+
+</div>
 
 ---
 
@@ -270,17 +293,17 @@ coding, for me, isn't just syntax and systems. **it's how i express myself, conn
 ## Let's Connect & Build Something Ridiculous 🚀
 
 - 🌐 **portfolio playground:** [threejs-black.vercel.app](https://threejs-black.vercel.app/)
-- 💼 **professional linkedin:** [in/utkarsh-choudhary](https://www.linkedin.com/in/utkarsh-choudhary) (where i pretend to be professional)
-- 📸 **chaotic instagram:** tech memes & synth content (where the real me lives)
-- 📧 **email:** [choudharyu2003@gmail.com](mailto:choudharyu2003@gmail.com) (yes i read these)
+- 💼 **professional linkedin:** [in/utkarsh-choudhary](https://www.linkedin.com/in/utkarsh-choudhary) (where I pretend to be professional)
+- 📸 **chaotic Instagram:** tech memes & synth content (where the real me lives)
+- 📧 **email:** [choudharyu2003@gmail.com](mailto:choudharyu2003@gmail.com) (yes I read these)
 
 ---
 
 ## closing thoughts 💫
 
-i genuinely believe that **the best software is created with curiosity, not just competence.** it should be useful, maintainable, and built with empathy for the people who'll use it. bonus points if it's *fun*.
+I genuinely believe that **the best software is created with curiosity, not just competence.** It should be useful, maintainable, and built with empathy for the people who'll use it. Bonus points if it's *fun*.
 
-i'm always excited to:
+I'm always excited to:
 - 🧪 experiment with weird tech combinations
 - 🤝 collaborate on projects that matter
 - 📚 learn from people smarter than me (which is everyone)
@@ -301,7 +324,34 @@ i'm always excited to:
 
 **p.s.** if you got this far, you're either:
 1. considering hiring me (yes please 👀)
-2. lost on github (it's ok, happens to the best of us)
+2. lost on GitHub (it's ok, happens to the best of us)
 3. also a chaos gremlin who codes at 3am (let's be friends 🤝)
 
-either way, thanks for reading. go build something cool. 🚀
+either way, thanks for reading. Go build something cool. 🚀
+
+<script>
+function showTab(evt, tabName) {
+  var i, tabcontent, tablinks;
+  
+  tabcontent = document.getElementsByClassName("tab-content");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  
+  tablinks = document.getElementsByClassName("tab-btn");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].classList.remove("active-tab");
+    tablinks[i].style.background = "linear-gradient(to bottom, #1e293b, #0f172a)";
+    tablinks[i].style.color = "#cbd5e1";
+    tablinks[i].style.marginBottom = "0";
+    tablinks[i].style.height = "42px";
+  }
+  
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.classList.add("active-tab");
+  evt.currentTarget.style.background = "linear-gradient(to bottom, #1f2937, #111827)";
+  evt.currentTarget.style.color = "#e2e8f0";
+  evt.currentTarget.style.marginBottom = "-2px";
+  evt.currentTarget.style.height = "44px";
+}
+</script>
