@@ -1,210 +1,139 @@
-![](assets/Bottom_up.svg)
+# hey, i'm utkarsh 👋
 
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&center=true&vCenter=true&width=700&lines=Hi+there+👋,+I'm+Utkarsh+Choudhary!;He/Him/His;Graduate+from+Penn+State+University;Aspiring+Full-Stack+and+NLP+Developer;Lifelong+Learner+and+Builder;I+love+using+emojis+in+passion+projects+(👁️❤️🧑‍💻🎨);Welcome+to+My+GitHub+🚀)](https://git.io/typing-svg)
-
-<h2 align="center">
-  <img src="https://media.giphy.com/media/w1OBpBd7kJqHrJnJ13/giphy.gif" width="50">
-  <p align="center"><a href="https://threejs-black.vercel.app/" target="_blank"><img width="80%" alt="Hello, I'm UC, aspiring Full-Stack developer!" src="https://see.fontimg.com/api/renderfont4/BxYl/eyJyIjoiZnMiLCJoIjo4NiwidyI6MjAwMCwiZnMiOjQzLCJmZ2MiOiIjRkZGRkZGIiwiYmdjIjoiIzM1M0Q0QiJ9/SGksIEkgYW0gVUMsIGFzcGlyaW5nIGRldmVsb3Blci4/dirtyboy.png" /></a></p>
-</h2>
-
-<h3 align="center"><i>👨‍🎓 Graduate from Penn State • 🌐 <a href="https://threejs-black.vercel.app/" target="_blank">Portfolio Website</a> • 💼 <a href="https://www.linkedin.com/in/utkarsh-choudhary-a46146a4/" target="_blank">LinkedIn</a></i></h3>
+> full-stack dev • nLP tinkerer • synthesizer enthusiast • way too many emojis • build things for fun & science 🚀
 
 ---
 
-<!-- NAV TABS -->
-[![About Me](https://img.shields.io/badge/About_Me-111827?style=for-the-badge&logo=github&logoColor=white)](#about-me)
-[![Tech Stack](https://img.shields.io/badge/Tech_Stack-1d4ed8?style=for-the-badge&logo=stackshare&logoColor=white)](#tech-stack)
-[![Portfolio](https://img.shields.io/badge/Portfolio-059669?style=for-the-badge&logo=vercel&logoColor=white)](#portfolio)
-[![Why I Build](https://img.shields.io/badge/Why_I_Build-7c3aed?style=for-the-badge&logo=notion&logoColor=white)](#why-i-build)
-[![Teamwork Playbook](https://img.shields.io/badge/Teamwork_Playbook-db2777?style=for-the-badge&logo=confluence&logoColor=white)](#teamwork-playbook)
-[![GitHub Stats](https://img.shields.io/badge/GitHub_Stats-ea580c?style=for-the-badge&logo=github&logoColor=white)](#github-stats)
+## who am i? 🤔
 
----
+i'm a penn state grad who spends way too much time thinking about how code, creativity, and chaos all fit together. i code because it's fun, experiment fearlessly (and often break things), and somehow ended up liking both systems programming *and* shiny web apps. 
 
-<a id="about-me"></a>
-## 🧑‍💻 About Me
-
-I'm a full-stack developer and NLP enthusiast who thrives on building elegant, performant systems that bridge logic and creativity.
-From **systems programming** to **modern web apps** to **AI integration**, I love exploring how different layers of computing fit together.
-
-I experiment fearlessly, learn obsessively, and share openly — whether that's code, insight, or a fun tech meme (literally my entire instagram).
-Oh, and yes — I use emojis *way too much* 😄.
+things that make me tick:
+- 🎹 **synthesizer player** (6+ years of classical & waltz vibes)
+- 📚 **sci-fi & anime connoisseur** (literally my entire vibe)
+- 💡 **code nerd** who gets disproportionately excited when things finally work
+- 🌐 **building cool stuff** just to see if i can
+- 😄 **emoji abuser** (you've probably noticed by now)
 
 <p align="center">
-  <img src="https://media.giphy.com/media/eNAsjO55tPbgaor7ma/giphy.gif" width="300" alt="Coding gif">
-</p>
-
-### ⚡ Fun Facts
-
-- 🎹 I've played the synthesizer for over 6 years (classical & waltz lover).
-- 📚 Sci-fi, anime, and light novels are my creative recharge.
-- 💡 My favorite part of coding? The "aha" moment when something *finally* works.
-
-<p align="center">
-  <img src="https://media.giphy.com/media/PiQejEf31116URju4V/giphy.gif" width="250"/>
+  <img src="https://media.giphy.com/media/eNAsjO55tPbgaor7ma/giphy.gif" width="300" alt="vibing while coding">
 </p>
 
 ---
 
-<a id="tech-stack"></a>
-## 🧠 Languages, Frameworks & Tools
+## the tech stuff 🧠
+
+i play with anything that's interesting. here's my current playground:
 
 <div align="center">
 
-| **Category** | **Technologies** |
-|---|---|
-| 💬 **Languages** | <img src="https://skillicons.dev/icons?i=c,cpp,java,python,js,ts,rust,solidity,zig" alt="Languages" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" width="40" title="C#"/> |
-| ⚙️ **Frameworks** | <img src="https://skillicons.dev/icons?i=react,angular,nodejs,django,spring,dotnet" alt="Frameworks" /> |
-| 🧰 **Tools & DBs** | <img src="https://skillicons.dev/icons?i=git,vscode,postgres,mysql,docker,linux,ubuntu" alt="Tools & Databases" /> |
+**languages & frameworks**
+
+<img src="https://skillicons.dev/icons?i=c,cpp,java,python,js,ts,rust,solidity,zig" alt="Languages" />
+
+<img src="https://skillicons.dev/icons?i=react,nodejs,django,spring,dotnet,angular" alt="Frameworks" />
+
+**tools & infra**
+
+<img src="https://skillicons.dev/icons?i=git,docker,kubernetes,linux,postgres,redis,vscode" alt="Tools" />
 
 </div>
 
-### ⚙️ Tech ~~Stack~~ Queue
-
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=c,cpp,rust,go,python,java,linux,docker,kubernetes,react,ts,nodejs,postgres,redis" />
-</p>
-
-<p align="center">
-  <img src="https://media.giphy.com/media/L8K62iTDkzGX6/giphy.gif" width="300" alt="Coding animation">
+  <img src="https://media.giphy.com/media/L8K62iTDkzGX6/giphy.gif" width="300" alt="coding animation">
 </p>
 
 ---
 
-<a id="portfolio"></a>
-## 🚀 Portfolio Spotlight
+## projects i'm weirdly proud of 🎨
 
-🎨 Explore my interactive 3D portfolio built with **Three.js** & **React Three Fiber**:
-👉 **[https://threejs-black.vercel.app/](https://threejs-black.vercel.app/)**
+these aren't just code dumps — they're little windows into what i was thinking/feeling when i built them:
+
+### **[3d portfolio](https://threejs-black.vercel.app/)** ✨
+interactive 3d playground built with three.js & react three fiber. it's basically "what if my portfolio could spin?" and i love it.
+
+### **[isekai.html](http://udogg.github.io/isekai.html)** 🌀
+*(password: "j")* a comedic fever dream about anime storytelling & design. fair warning: has some spicy language because it's a comedy bit. 🚨
+
+### **[todo.html](https://udogg.github.io/todo.html)** ✅
+a lightweight life organizer. proof that sometimes the simplest tools are the most satisfying to use.
+
+### **[form.html](https://udogg.github.io/form.html)** 💼
+made this for my mom's work. small project, big meaning — reminder that even tiny tools can brighten someone's day.
+
+### **[conc.html](https://udogg.github.io/conc.html)** ⚡
+penn state eng 202c project visualizing concurrency in a way that actually makes sense. systems programming meets visual design.
+
+### **[b.pdf](https://udogg.github.io/b.pdf)** 🔐
+deep dive research paper on botnets & cybersecurity. yes, i write technical papers. yes, i'm still fun at parties.
+
+---
+
+## why i code 💭
+
+creation feels like translation — taking imagination, emotion, and logic and turning it into something real. every line of code is a tiny conversation between me and the computer.
+
+> "God help and forgive me, I want to build something that's gonna outlive me." — Hamilton
+
+every project tells a story of who i was when i made it. some scream curiosity. some scream care. some are just the joy of "huh, i wonder if this would work?" and then finding out it does.
 
 <p align="center">
-  <img src="https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif" width="400"/>
+  <img src="https://media.giphy.com/media/PiQejEf31116URju4V/giphy.gif" width="250" alt="happy coding">
 </p>
 
 ---
 
-<a id="why-i-build"></a>
-## 💡 Why I Build.
-
-I build because creation feels like translation — converting imagination, emotion, and logic into something tangible.
-In the words of Hamilton: An American Musical, *"God help and forgive me, I want to build something that's gonna outlive me."*
-It's my way of understanding the world, of processing thoughts and experiences through code.
-
-Every project I've worked on tells a small story of who I was at the time:
-
-- [**isekai.html**](http://udogg.github.io/isekai.html) *(password: "j")* — born from my passion for anime, it is a comedic take on storytelling, art, and design through the lens of a web experience.
-  ‼️🚨 **Has some strong language — it's a comedy piece.** 🚨‼️
-- [**todo.html**](https://udogg.github.io/todo.html) — a lightweight life organizer I built to bring structure to my chaos, where code meets discipline.
-- [**form.html**](https://udogg.github.io/form.html) — a simple but meaningful project: a form I made to help my mom with her work. It reminded me that even small tools can make someone's day easier.
-- [**conc.html**](https://udogg.github.io/conc.html) — a Penn State *ENG 202C* project that visualizes concurrency in a high-level, intuitive way, blending my love for systems programming with clear communication.
-- [**b.pdf**](https://udogg.github.io/b.pdf) — a research-heavy *ENG 202C* technical paper on botnets, diving deep into cybersecurity concepts and writing them up for an academic audience.
-
-Each project reflects a different emotion — curiosity, care, discipline, or just the joy of learning something new.
-Coding, for me, isn't just about syntax and systems. It's how I express myself, connect with others, and keep evolving — one build, one bug fix, one idea at a time.
-
----
-
-<a id="teamwork-playbook"></a>
-## 🤝 My Teamwork Playbook
+## how i work with people 🤝
 
 <details>
-  <summary><b>Click here to open my Teamwork Playbook!</b> 👇</summary>
+  <summary><b>click to see my teamwork playbook</b> 👇</summary>
 
   <br>
 
-  ### 🧭 Teamwork Playbook — Utkarsh Choudhary
+  ### my collaboration style
 
-  #### Purpose
-  This document outlines how I collaborate best — balancing technical drive with respect for team flow.
+  **work vibe:** i like staying ahead of deadlines & having time to polish things. clear roles > chaos.
 
-  ---
+  **communication:** overcommunicate > assume. direct feedback (even the harsh stuff) beats silent resentment. if i'm going too fast, just tell me — i adapt.
 
-  ### 1. Work Style
-  - I like working **ahead of deadlines** and leaving time for polish.
-  - I prefer **clear delegation** and **defined roles** to avoid overlap.
-  - My strengths are in **frontend–backend integration**, **system design**, and **technical documentation**.
+  **leadership:** i'm cool leading if needed, but i prefer *shared* leadership. leadership = facilitating, not controlling.
 
-  💡 *I adjust easily if others prefer a different pace — clarity beats control.*
+  **conflict:** let's talk evidence, not feelings. reset expectations instead of brewing resentment. i de-escalate, never escalate.
 
-  ---
-
-  ### 2. Communication
-  - I prioritize **concise, transparent updates**.
-  - I value **direct, constructive feedback** — even critical ones.
-  - I prefer **overcommunication** to guessing assumptions.
-
-  💬 *If I'm pushing too fast, tell me — I'll adapt immediately.*
-
-  ---
-
-  ### 3. Leadership & Roles
-  - I can lead if needed, but I enjoy **shared leadership**.
-  - Leadership means **facilitating**, not controlling.
-  - I push for **ownership and accountability** from day one.
-
-  🔁 *Early alignment saves late-night scrambles.*
-
-  ---
-
-  ### 4. Conflict & Feedback
-  - I like **evidence-based discussions**, not emotional ones.
-  - I believe in **resetting expectations** over resentment.
-  - I never escalate; I de-escalate.
-
-  🧩 *Bring it up — I'll listen.*
-
-  ---
-
-  ### 5. Core Principles
-  - ✅ Finish early, refine together.
-  - 💬 No surprises — communicate everything.
-  - ⚖️ Accountability > blame.
-  - 🤝 Respect, even in disagreement.
-  - 🎉 Shared credit always.
-
-  ---
-
-  <p align="center">
-    <img src="https://media.giphy.com/media/j5QcmXoFWl4Q0/giphy.gif" width="250"/>
-  </p>
+  **core principles:**
+  - ✅ finish early, refine together
+  - 💬 no surprises — communicate *everything*
+  - ⚖️ accountability > blame
+  - 🤝 respect, even in disagreement
+  - 🎉 shared credit, always
 
 </details>
 
 ---
 
-<a id="github-stats"></a>
-## 📊 GitHub Statistics
+## some stats 📊
 
 <div align="center">
 
-| **🔥 Streak** | **💻 Languages Used** |
-|---|---|
-| <img src="https://streak-stats.demolab.com?user=UDogg&theme=tokyonight&hide_border=true&date_format=j%20M%5B%20Y%5D"/> | <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=UDogg&layout=compact&theme=tokyonight&hide_border=true"/> |
+<img src="https://streak-stats.demolab.com?user=UDogg&theme=tokyonight&hide_border=true&date_format=j%20M%5B%20Y%5D" alt="github streak" />
 
-<br>
-
-<p align="center">
-  <img src="https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif" width="350"/>
-</p>
-
-<p align="center">
-  <img src="https://github.com/BEPb/BEPb/blob/output/github-contribution-grid-snake.svg" />
-</p>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=UDogg&layout=compact&theme=tokyonight" alt="top languages" />
 
 </div>
 
 ---
 
-## Philosophy
+## let's connect 🌐
 
-<p align="center">
-  <img src="https://github.com/UDogg/UDogg/blob/main/assets/philosophy.svg" />
-</p>
+- 🔗 **portfolio:** [threejs-black.vercel.app](https://threejs-black.vercel.app/)
+- 💼 **linkedin:** [in/utkarsh-choudhary](https://www.linkedin.com/in/utkarsh-choudhary)
+- 📸 **instagram:** literally where i post tech memes
+- 📧 **email:** [reach out!](#)
 
 ---
 
 <p align="center">
-  <img src="https://media.giphy.com/media/dWesBcTLavkZuG35MI/giphy.gif" width="300"/>
+  <img src="https://media.giphy.com/media/dWesBcTLavkZuG35MI/giphy.gif" width="300" alt="building vibes">
 </p>
 
-<h3 align="center">Let's build systems that actually scale...</h3>
+<h3 align="center">let's build systems that actually scale... and have fun doing it 🚀</h3>
