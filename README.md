@@ -53,8 +53,8 @@ Oh, and yes — I use emojis *way too much* 😄.
 
 | **Category** | **Technologies** |
 |---|---|
-| 💬 **Languages** | <img src="https://skillicons.dev/icons?i=c,cpp,java,python,js,ts,rust,solidity,zig" alt="Languages" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" width="40" title="C#"/> |
-| ⚙️ **Frameworks** | <img src="https://skillicons.dev/icons?i=react,angular,nodejs,django,spring,dotnet" alt="Frameworks" /> |
+| 💬 **Languages** | <img src="https://skillicons.dev/icons?i=c,cpp,java,python,js,ts,rust,php,zig" alt="Languages" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" width="40" title="C#"/> |
+| ⚙️ **Frameworks** | <img src="https://skillicons.dev/icons?i=react,angular,nodejs,django,spring,dotnet,laravel" alt="Frameworks" /> |
 | 🧰 **Tools & DBs** | <img src="https://skillicons.dev/icons?i=git,vscode,postgres,mysql,docker,linux,ubuntu" alt="Tools & Databases" /> |
 
 </div>
@@ -62,7 +62,7 @@ Oh, and yes — I use emojis *way too much* 😄.
 ### ⚙️ Tech ~~Stack~~ Queue
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=c,cpp,rust,go,python,java,linux,docker,kubernetes,react,ts,nodejs,postgres,redis" />
+  <img src="https://skillicons.dev/icons?i=c,cpp,rust,go,python,java,laravel,docker,kubernetes,react,ts,nodejs,postgres,redis" />
 </p>
 
 <p align="center">
