@@ -7,7 +7,7 @@
   <p align="center"><a href="https://threejs-black.vercel.app/" target="_blank"><img width="80%" alt="Hello, I'm UC, aspiring Full-Stack developer!" src="https://see.fontimg.com/api/renderfont4/BxYl/eyJyIjoiZnMiLCJoIjo4NiwidyI6MjAwMCwiZnMiOjQzLCJmZ2MiOiIjRkZGRkZGIiwiYmdjIjoiIzM1M0Q0QiJ9/SGksIEkgYW0gVUMsIGFzcGlyaW5nIGRldmVsb3Blci4/dirtyboy.png" /></a></p>
 </h2>
 
-<h3 align="center"><i>👨‍🎓 Graduate from Penn State • 🌐 <a href="https://threejs-black.vercel.app/" target="_blank">Portfolio Website</a> • 💼 <a href="https://www.linkedin.com/in/utkarsh-choudhary-a46146a4/" target="_blank">LinkedIn</a></i></h3>
+<h3 align="center"><i>👨‍🎓 Computer Science Graduate from Penn State University • 🌐 <a href="https://threejs-black.vercel.app/" target="_blank">Portfolio Website</a> • 💼 <a href="https://www.linkedin.com/in/utkarsh-choudhary-a46146a4/" target="_blank">LinkedIn</a></i></h3>
 
 ---
 
